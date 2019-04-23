@@ -1,0 +1,147 @@
+@import url('https://fonts.googleapis.com/css?family=Lato:300,400,700, 900');
+
+$blue: #243C5B;
+$green: #9EC848;
+
+div, a, img{
+    box-sizing: border-box;
+}
+a{
+    text-decoration: none;
+}
+body, html{
+    width: 100%;
+    height: 100%;
+    margin:0;
+    padding:0;
+    font-family: 'lato', 'sans-serif', 'calibri';
+    font-size: 16px;
+    -webkit-font-smoothing: antialiased;
+   -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+}
+#header{
+    width: 100%;
+    max-width: 1200px;
+    margin:30px auto;
+    display:flex;
+    justify-content: space-between;
+    #logo{
+        width: 30%;
+        img{
+            width: 80px;
+        }
+    }
+    .menus{
+        display:flex;
+        justify-content: flex-end;
+        align-items: center;
+        .menuItem{
+            margin: 0 26px;
+            font-weight: light;
+            color: $blue;
+            
+            cursor: pointer;
+            &.active{
+                color: $green;
+                font-weight: bold;
+            }
+            &:hover{
+                transition: .3s;
+                color: $green;
+            }
+        }
+    }
+}
+.mainBody{
+    .research{
+        display:flex;
+        justify-content: center;
+        .method{
+            display:flex;
+            flex-direction: column;
+            text-align: center;
+            width: 100px;
+            margin: 30px;
+            .iconWrapper{
+                display:flex;
+                align-items: center;
+                width: 80px;
+                height: 80px;
+                margin: 20px auto;
+                img{
+                    width: 100%;
+                }
+            }
+            .iconExpla{
+                color: #fff;
+            }
+        }
+    }
+    .bgBlue{
+        background: $blue;
+    }
+}
+.profileTop{
+    overflow: hidden;
+    height: 360px;
+    width: 100%;
+    margin: 60px 0 120px;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    #secTop{
+        width: 100%;
+    }
+}
+.profiles{
+    margin-bottom: 300px;
+    .profileWrapper{
+        width: 95%;
+        max-width: 900px;
+        margin: 30px auto 60px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        line-height: 1.6;
+        .profilePhoto{
+            width: 95%;
+            max-width: 300px;
+            margin:0 40px 0 0;
+            
+            img{
+                width: 100%;
+                border-radius: 150px;
+            }
+        }
+        @media screen and (max-width: 400px){
+            flex-direction: column;
+            .profilePhoto{
+                margin:0 auto 30px;
+            }
+        }
+       
+        .profileContent{
+            width: calc(100% - 340px);
+            .title{
+                text-transform: uppercase;
+                font: {
+                    size: 12px;
+                    weight: 900;
+                }
+            }
+            .name{
+                margin-bottom: 15px;
+                font: {
+                    size: 24px;
+                    weight: 300;
+                }
+            }
+            .bio{
+                font: {
+                    size: 16px;
+                }
+            }
+        }
+    }
+}

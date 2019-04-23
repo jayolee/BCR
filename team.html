@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <link rel="shortcut icon" href="images/icon.png">
+    <link rel="stylesheet" href="index.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="theme-color" content="#000000">
+
+    <title>Team Boulder Crest</title>
+</head>
+
+<body>
+        
+    <div id="header">
+        <a href="index.html" rel="noopener noreferrer">
+            <div id="logo">
+                <img src="images/logo.png" />
+            </div>
+        </a>
+        <div class="menus">
+            <div class="menuItem">Problem</div>
+            <a href="research.html" rel="noopener noreferrer">
+                <div class="menuItem">Research</div>
+            </a>
+            <div class="menuItem">Design</div>
+            <a href="team.html" rel="noopener noreferrer">
+            <div class="menuItem active">Team</div>
+        </a>
+        </div>
+    </div>
+    <div class="mainBody">
+        <div class="profileTop">
+            <img id="secTop" src="images/profiletop/1.jpg" />
+            
+        </div>
+        <div class="profiles">
+            <div class="profileWrapper">
+                <div class="profilePhoto">
+                    <img src="images/team/amanda.jpeg" />
+                </div>
+                <div class="profileContent">
+                    <div class="title">
+                        Project Manager
+                    </div>
+                    <div class="name">
+                        Amanda Kennedy
+                    </div>
+                    <div class="bio">
+                        Amanda Kennedy is our project manager. She led user research at a digital health startup and
+                        her user research consultancy, Lanternalia, before the MHCI program. She hopes to use design to
+                        improve civic service delivery after graduation. In the meantime, she is honored to work with
+                        Boulder Crest to support veterans who have served our country.
+                    </div>
+                </div>
+            </div>
+
+            <div class="profileWrapper">
+                <div class="profilePhoto">
+                    <img src="images/team/kevin.jpeg" />
+                </div>
+                <div class="profileContent">
+                    <div class="title">
+                        User Research Lead
+                    </div>
+                    <div class="name">
+                        Kevin Seelaus 
+                    </div>
+                    <div class="bio">
+                        Kevin Seelaus is from Philadelphia, and has worked as a research specialist for psychology labs
+                        at the University of Pennsylvania and University of Pittsburgh studying schizophrenia,
+                        neurodevelopment, and cognitive functioning. He believes that technology and design have
+                        important role to play in the future of science and mental healthcare, and looks forward to the
+                        unique challenges this project will undoubtedly have in store.
+                    </div>
+                </div>
+            </div>
+
+            <div class="profileWrapper">
+                <div class="profilePhoto">
+                    <img src="images/team/liz.jpeg" />
+                </div>
+                <div class="profileContent">
+                    <div class="title">
+                        UX Design Lead
+                    </div>
+                    <div class="name">
+                        Zixuan Li
+                    </div>
+                    <div class="bio">
+                        Zixuan (Liz) Li is a UX designer and User researcher. Prior to MHCI program, she studied
+                        architecture and interned as a UX consultant at Accenture interactive. She has an interest in
+                        data science and machine learning, and believes that good design is crucial for technology to
+                        better serve people. She is excited to be working on this project with Boulder Crest.
+                    </div>
+                </div>
+            </div>
+
+            <div class="profileWrapper">
+                <div class="profilePhoto">
+                    <img src="images/team/tyler.jpeg" />
+                </div>
+                <div class="profileContent">
+                    <div class="title">
+                        UX Designer
+                    </div>
+                    <div class="name">
+                        Tyler Stern
+                    </div>
+                    <div class="bio">
+                        Tyler Stern is originally from New Jersey but grew up in Atlanta, Georgia. It was there that he
+                        completed design and video work for the Residence Life office at Emory University and a
+                        children’s advocacy non-profit called Voices for Georgia’s Children. Tyler is grateful to have
+                        the opportunity to work with Boulder Crest and help people in need.
+                    </div>
+                </div>
+            </div>
+
+            <div class="profileWrapper">
+                <div class="profilePhoto">
+                    <img src="images/team/young.jpeg" />
+                </div>
+                <div class="profileContent">
+                    <div class="title">
+                        Design Technologist
+                    </div>
+                    <div class="name">
+                        Ja Young Lee 
+                    </div>
+                    <div class="bio">
+                        a Young Lee is a designer and a front-end developer. She studied Fine Arts as an undergraduate
+                        and worked as a UX designer in an EdTech startup before joining the MHCI program.
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <script>
+            // import topimg1 from './images/profiletop/1.jpg'
+            // import topimg2 from './images/profiletop/2.jpg'
+            // import topimg3 from './images/profiletop/3.jpg'
+            // import topimg4 from './images/profiletop/4.jpg'
+            const topSec = document.getElementById("secTop");
+            // const images = [topimg1, topimg2, topimg3, topimg4];
+    
+            function topImgs() {
+                let i = 2;
+                setInterval(function () {
+                topSec.src = "./images/profiletop/"+i+".jpg";
+                    if (i < 4) { i++ } else{
+                        i = 1;
+                    }
+                }, 3000);
+            };
+            topImgs();
+        </script>
+</body>
+
+</html>
