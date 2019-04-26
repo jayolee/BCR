@@ -12,7 +12,7 @@
 </head>
 
 <body>
-        
+
     <div id="header">
         <a href="index.html" rel="noopener noreferrer">
             <div id="logo">
@@ -20,20 +20,33 @@
             </div>
         </a>
         <div class="menus">
-            <div class="menuItem">Problem</div>
-            <a href="research.html" rel="noopener noreferrer">
+
+                <div id="nav-icon" >
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+
+
+            <a href="index.html" class="menuwrap" rel="noopener noreferrer">
+                <div class="menuItem">Problem</div>
+            </a>
+            <a href="research.html" class="menuwrap" rel="noopener noreferrer">
                 <div class="menuItem">Research</div>
             </a>
-            <div class="menuItem">Design</div>
-            <a href="team.html" rel="noopener noreferrer">
-            <div class="menuItem active">Team</div>
-        </a>
+            <a href="design.html" class="menuwrap" rel="noopener noreferrer">
+                    <div class="menuItem">Design</div>
+                </a>
+            <a href="team.html" class="menuwrap" rel="noopener noreferrer">
+                <div class="menuItem active">Team</div>
+            </a>
         </div>
     </div>
     <div class="mainBody">
         <div class="profileTop">
             <img id="secTop" src="images/profiletop/1.jpg" />
-            
+            <img id="secTop2" src="images/profiletop/2.jpg" />
         </div>
         <div class="profiles">
             <div class="profileWrapper">
@@ -138,24 +151,53 @@
 
     </div>
     <script>
-            // import topimg1 from './images/profiletop/1.jpg'
-            // import topimg2 from './images/profiletop/2.jpg'
-            // import topimg3 from './images/profiletop/3.jpg'
-            // import topimg4 from './images/profiletop/4.jpg'
-            const topSec = document.getElementById("secTop");
-            // const images = [topimg1, topimg2, topimg3, topimg4];
-    
-            function topImgs() {
-                let i = 2;
+        const topSec = document.getElementById("secTop");
+        const topSec2 = document.getElementById("secTop2");
+
+
+
+        function topImgs() {
+
+            let eveni = 2;
+            let oddi = 3
+
+            topSec.style.opacity = 1;
+            setTimeout(function () {
+                topSec.style.opacity = 0;
+            }, 2800)
+
+            setTimeout(function () {
                 setInterval(function () {
-                topSec.src = "./images/profiletop/"+i+".jpg";
-                    if (i < 4) { i++ } else{
-                        i = 1;
+                    topSec.src = "./images/profiletop/" + oddi + ".jpg";
+
+                    topSec.style.opacity = 1;
+                    setTimeout(function () {
+                        if (oddi < 3) { oddi = oddi + 2 } else {
+                            oddi = 1;
+                        }
+                        topSec.style.opacity = 0;
+                    }, 2800)
+                }, 6000);
+            }, 3000);
+
+            setInterval(function () {
+
+                topSec2.src = "./images/profiletop/" + eveni + ".jpg";
+
+                topSec2.style.opacity = 1;
+                setTimeout(function () {
+                    if (eveni < 4) { eveni = eveni + 2 } else {
+                        eveni = 2;
                     }
-                }, 3000);
-            };
-            topImgs();
-        </script>
+                    topSec2.style.opacity = 0;
+                }, 2800)
+            }, 6000);
+
+
+
+        };
+        topImgs();
+    </script>
 </body>
 
 </html>
