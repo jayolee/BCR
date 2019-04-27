@@ -90,32 +90,57 @@ body, html {
       top: 18px;
       right: 50%;
       width: 0%; } }
+.mainBody .main {
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto; }
+  .mainBody .main .problemS {
+    font-size: 21px;
+    font-weight: bold;
+    color: #243C5B; }
 .mainBody .research {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
   width: 100%;
-  padding: 60px 5%; }
+  padding: 120px 5%; }
   .mainBody .research .secTitle {
     width: 100%;
     text-align: center;
-    margin: 0 auto 10px;
+    margin: 0 auto 30px;
     text-transform: uppercase;
     letter-spacing: 1px;
     font-size: 28px;
     font-weight: bold; }
   .mainBody .research .secExpla {
-    width: 100%;
+    width: 95%;
+    max-width: 750px;
     text-align: center;
     margin: 0 auto 30px;
     font-size: 18px; }
+  .mainBody .research .centerExpla {
+    text-align: left;
+    width: 95%;
+    max-width: 1000px;
+    display: flex; }
+    .mainBody .research .centerExpla div {
+      width: 30%;
+      margin: 30px 20px; }
+  .mainBody .research .expla {
+    text-align: left;
+    width: 95%;
+    max-width: 1000px;
+    line-height: 1.6 div;
+      line-height-width: 30%;
+      line-height-margin: 30px 20px; }
   .mainBody .research .method {
     display: flex;
     align-items: flex-start;
     align-content: flex-start;
+    justify-content: center;
     text-align: left;
-    width: 500px;
-    margin: 30px; }
+    width: 1000px;
+    margin: 40px 0; }
     .mainBody .research .method .iconWrapper {
       display: flex;
       align-items: flex-start;
@@ -135,7 +160,11 @@ body, html {
       .mainBody .research .method .iconExpla .ex {
         line-height: 1.7;
         width: 150px;
-        font-size: 14px; }
+        font-size: 14px;
+        margin: 0 20px; }
+      .mainBody .research .method .iconExpla .researchEx {
+        width: 450px;
+        margin: 0 20px; }
   .mainBody .research .insightWrapper {
     display: flex; }
     .mainBody .research .insightWrapper .insights {
@@ -168,13 +197,29 @@ body, html {
     margin: 120px auto; }
     .mainBody .research .paralleWrap .paralleBtn {
       cursor: pointer;
+      display: flex;
+      align-items: center;
       transition: .3s;
       width: 150px;
       height: 150px;
       border-radius: 80px;
       color: #fffef4;
-      font-size: 32px;
+      transition: .3s;
+      font-size: 36px;
       font-weight: bold; }
+      .mainBody .research .paralleWrap .paralleBtn div {
+        width: 100%;
+        text-align: center; }
+      .mainBody .research .paralleWrap .paralleBtn .hoverV {
+        font-size: 24px;
+        height: 120px;
+        border-radius: 80px;
+        background: rgba(255, 255, 255, 0.2);
+        margin: 0 auto;
+        transition: .3s;
+        padding-top: 40px;
+        opacity: 0;
+        width: 0; }
       .mainBody .research .paralleWrap .paralleBtn.alpha {
         background: #243C5B;
         box-shadow: 0px 10px 20px #243C5B; }
@@ -189,16 +234,56 @@ body, html {
         -webkit-transform: translateY(-10px);
         -ms-transform: translateY(-10px);
         transform: translateY(-10px); }
+        .mainBody .research .paralleWrap .paralleBtn:hover .hoverN {
+          width: 0;
+          opacity: 0; }
+        .mainBody .research .paralleWrap .paralleBtn:hover .hoverV {
+          width: 120px;
+          opacity: 1; }
+  .mainBody .research .prototypes {
+    width: 700px; }
+    .mainBody .research .prototypes .title {
+      font-size: 21px;
+      font-weight: bold; }
+  .mainBody .research .carousel {
+    width: 100%;
+    margin: 60px auto;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center; }
+    .mainBody .research .carousel img {
+      width: 100%;
+      max-width: 750px;
+      margin-bottom: 30px; }
+    .mainBody .research .carousel .dots {
+      display: flex; }
+      .mainBody .research .carousel .dots .dot {
+        width: 18px;
+        height: 18px;
+        border: 2px solid rgba(0, 0, 0, 0.3);
+        border-radius: 9px;
+        margin: 10px; }
+        .mainBody .research .carousel .dots .dot.active {
+          background: rgba(0, 0, 0, 0.3); }
   .mainBody .research.hypo {
     display: block;
     text-align: center;
-    background: #243C5B;
-    padding: 40px 60px;
+    line-height: 1.7;
+    width: 90%;
+    max-width: 900px;
+    border-radius: 160px;
+    border: 2px dashed #243C5B;
+    padding: 60px 100px;
     margin: 120px auto;
-    color: #fff;
-    font-size: 21px;
-    font-weight: bold; }
+    color: #243C5B;
+    font-size: 32px;
+    font-weight: 300; }
 .mainBody .bgBlue {
+  width: 100%;
+  max-width: 1500px;
+  margin-left: auto;
+  margin-right: auto;
   background: #243C5B; }
   .mainBody .bgBlue .secTitle, .mainBody .bgBlue .secExpla {
     color: #fffef4; }

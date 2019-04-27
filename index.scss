@@ -148,16 +148,28 @@ body, html{
   }
 }
 .mainBody{
+    .main{
+        width: 100%;
+        max-width: 1000px;
+        margin: 0 auto;
+        .problemS{
+            font: {
+                size: 21px;
+                weight: bold;
+            }
+            color: $blue;
+        }
+    }
     .research{
         display:flex;
         justify-content: center;
         flex-wrap: wrap;
         width: 100%;
-        padding: 60px 5%;
+        padding: 120px 5%;
         .secTitle{
             width: 100%;
             text-align: center;
-            margin:0 auto 10px;
+            margin:0 auto 30px;
             text-transform: uppercase;
             letter-spacing: 1px;
             font: {
@@ -166,20 +178,42 @@ body, html{
             }
         }
         .secExpla{
-            width: 100%;
+            width: 95%;
+            max-width: 750px;
             text-align: center;
             margin:0 auto 30px;
             font: {
                 size: 18px;
             }
         }
+        .centerExpla{
+            text-align: left;
+            width: 95%;
+            max-width: 1000px;
+            display: flex;
+            div{
+                width: 30%;
+                margin: 30px 20px
+            }
+        }
+        .expla{
+            text-align: left;
+            width: 95%;
+            max-width: 1000px;
+            line-height: 1.6
+            div{
+                width: 30%;
+                margin: 30px 20px
+            }
+        }
         .method{
             display:flex;
             align-items: flex-start;
             align-content: flex-start;
+            justify-content: center;
             text-align: left;
-            width: 500px;
-            margin: 30px;
+            width: 1000px;
+            margin: 40px 0;
             .iconWrapper{
                 display:flex;
                 align-items: flex-start;
@@ -205,6 +239,11 @@ body, html{
                     line-height: 1.7;
                     width: 150px;
                     font-size: 14px;
+                    margin: 0 20px;
+                }
+                .researchEx{
+                    width: 450px;
+                    margin: 0 20px;
                 }
             }
         }
@@ -245,16 +284,34 @@ body, html{
             justify-content: space-around;
             margin: 120px auto;
             .paralleBtn{
-               
                 cursor: pointer;
+                display:flex;
+                align-items: center;
                 transition: .3s;
                 width: 150px;
                 height: 150px;
                 border-radius: 80px;
                 color: $Dwhite;
+                transition: .3s;
                 font: {
-                    size: 32px;
+                    size: 36px;
                     weight: bold;
+                }
+                div{
+                    width: 100%;
+                    text-align: center;
+                }
+                .hoverV{
+                    // display:none;
+                    font-size: 24px;
+                    height: 120px;
+                    border-radius: 80px;
+                    background: rgba(255,255,255,.2);
+                    margin:0 auto;
+                    transition: .3s;
+                    padding-top:40px;
+                    opacity: 0;
+                    width: 0;
                 }
                 &.alpha{
                     background: $blue;
@@ -272,27 +329,78 @@ body, html{
                 }
                 &:hover{
                     @include transform(translateY(-10px));
+                    .hoverN{
+                        width: 0;
+                        opacity: 0;
+                    }
+                    .hoverV{
+                        width: 120px;
+                        opacity: 1;
+                    }
+                }
+            }
+        }
+        .prototypes{
+            width: 700px;
+            .title{
+               
+                font: {
+                    size: 21px;
+                    weight: bold;
+                }
+            }
+        }
+        .carousel{
+            width: 100%;
+            margin: 60px auto;
+            text-align: center;
+            display:flex;
+            flex-direction: column;
+            align-items: center;
+            img{
+                width: 100%;
+                max-width: 750px;
+               margin-bottom: 30px;;
+            }
+            .dots{
+                display: flex;
+                .dot{
+                    width: 18px;
+                    height: 18px;
+                    border:2px solid rgba(0,0,0,0.3);
+                    border-radius: 9px;
+                    margin:10px;
+                    &.active{
+                        background: rgba(0,0,0,0.3);
+                    }
                 }
             }
         }
         &.hypo{
             display:block;
             text-align: center;
-            // width: 100%;
-            // max-width: 1100px;
-            // border-radius: 160px;
-            background: $blue;
-            padding: 40px 60px;
+            line-height: 1.7;
+            width: 90%;
+            max-width: 900px;
+            border-radius: 160px;
+            border: 2px dashed $blue;
+            padding: 60px 100px;
             margin:120px auto;
-            color: #fff;
+            color: $blue;   
 
             font: {
-                size: 21px;
-                weight: bold;
+                size: 32px;
+                weight: 300;
             }
         }
     }
     .bgBlue{
+        width: 100%;
+        max-width: 1500px;
+        margin: {
+            left: auto;
+            right: auto;
+        }
         background: $blue;
         .secTitle, .secExpla{
             color: rgb(255, 254, 244);
