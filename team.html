@@ -35,18 +35,19 @@
             <a href="research.html" class="menuwrap" rel="noopener noreferrer">
                 <div class="menuItem">Research</div>
             </a>
-            <a href="design.html" class="menuwrap" rel="noopener noreferrer">
+            <!-- <a href="design.html" class="menuwrap" rel="noopener noreferrer">
                     <div class="menuItem">Design</div>
-                </a>
+                </a> -->
             <a href="team.html" class="menuwrap" rel="noopener noreferrer">
                 <div class="menuItem active">Team</div>
             </a>
         </div>
     </div>
     <div class="mainBody">
-        <div class="profileTop">
-            <img id="secTop" src="images/profiletop/1.jpg" />
-            <img id="secTop2" src="images/profiletop/2.jpg" />
+        <div class="carouTop" style="margin-bottom: 120px">
+            <img id="topCarousel"  src="images/profiletop/1.jpg" />
+            <!-- <img id="secTop2" src="images/profiletop/2.jpg" /> -->
+            <div class="title">Our Team</div>
         </div>
         <div class="profiles">
             <div class="profileWrapper">
@@ -150,53 +151,21 @@
         </div>
 
     </div>
+    <script src="https://code.jquery.com/jquery-3.4.0.min.js" integrity="sha256-BJeo0qm959uMBGb65z40ejJYGSgR7REI4+CW1fNKwOg="
+    crossorigin="anonymous"></script>
     <script>
-        const topSec = document.getElementById("secTop");
-        const topSec2 = document.getElementById("secTop2");
-
-
-
-        function topImgs() {
-
-            let eveni = 2;
-            let oddi = 3
-
-            topSec.style.opacity = 1;
-            setTimeout(function () {
-                topSec.style.opacity = 0;
-            }, 2800)
-
-            setTimeout(function () {
-                setInterval(function () {
-                    topSec.src = "./images/profiletop/" + oddi + ".jpg";
-
-                    topSec.style.opacity = 1;
-                    setTimeout(function () {
-                        if (oddi < 3) { oddi = oddi + 2 } else {
-                            oddi = 1;
-                        }
-                        topSec.style.opacity = 0;
-                    }, 2800)
-                }, 6000);
-            }, 3000);
-
+         function topCarousel() {
+            let curImageTop = 2;
             setInterval(function () {
-
-                topSec2.src = "./images/profiletop/" + eveni + ".jpg";
-
-                topSec2.style.opacity = 1;
+                $("#topCarousel").css("opacity", "0");
+                (curImageTop < 4) ? (curImageTop += 1) : (curImageTop = 1);
                 setTimeout(function () {
-                    if (eveni < 4) { eveni = eveni + 2 } else {
-                        eveni = 2;
-                    }
-                    topSec2.style.opacity = 0;
-                }, 2800)
-            }, 6000);
-
-
-
+                    $("#topCarousel").attr('src', "images/profiletop/" + curImageTop + ".jpg");
+                    $("#topCarousel").css("opacity", "0.7");
+                }, 300);
+            }, 3000)
         };
-        topImgs();
+        topCarousel();
     </script>
 </body>
 
