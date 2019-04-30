@@ -161,8 +161,11 @@
                 (curImageTop < 4) ? (curImageTop += 1) : (curImageTop = 1);
                 setTimeout(function () {
                     $("#topCarousel").attr('src', "images/profiletop/" + curImageTop + ".jpg");
-                    $("#topCarousel").css("opacity", "0.7");
-                }, 300);
+                    setTimeout(function(){
+                        $("#topCarousel").css("opacity", "0.7");
+                    }, 100)
+                    
+                }, 400);
             }, 3000)
         };
         topCarousel();

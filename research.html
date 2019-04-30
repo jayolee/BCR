@@ -446,8 +446,8 @@
                     </div>
         </div>
 
-        <div class="research bgWhite">
-            <div class="secTitle">Insights</div>
+        <div class="research bgWhite" style="display:block">
+            <div class="secTitle" style="margin-bottom: 60px;">Insights</div>
             <div class="insightN" style="background:#253d5a" id="n1">
                 <div class="keyword">Team Dynamics</div>
                 <div class="expla">An <b>open and supportive</b> Fire Team unit helps set up trainees for success, so
@@ -524,8 +524,8 @@
             </div>
         </div>
     </div>
-    <script src="http://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.3/ScrollMagic.js"></script>
-    <script src="http://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.6/plugins/debug.addIndicators.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.3/ScrollMagic.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.6/plugins/debug.addIndicators.js"></script>
     <script src="https://code.jquery.com/jquery-3.4.0.min.js" integrity="sha256-BJeo0qm959uMBGb65z40ejJYGSgR7REI4+CW1fNKwOg="
         crossorigin="anonymous"></script>
     <script>
@@ -534,7 +534,6 @@
             const toggle = document.getElementById("protoToggle");
             const team1 = $("#proto1");
             const team2 = $("#proto2");
-            console.log(toggle.checked);
             if(toggle.checked === false){
                 team1.css("transform","translateX(calc(-150% - 60px");
                 team2.css("transform","translateX(-50%)");
@@ -552,8 +551,11 @@
                 (curImageTop < 5) ? (curImageTop += 1) : (curImageTop = 1);
                 setTimeout(function () {
                     $("#topCarousel").attr('src', "images/researchTop/" + curImageTop + ".jpg");
-                    $("#topCarousel").css("opacity", "0.7");
-                }, 300);
+                    setTimeout(function(){
+                        $("#topCarousel").css("opacity", "0.7");
+                    }, 100)
+                    
+                }, 400);
             }, 3000)
         };
         topCarousel();
