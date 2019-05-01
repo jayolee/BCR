@@ -189,7 +189,7 @@ body, html{
         p, li{
             line-height: 1.6;
             max-width: 800px;
-            margin:0 auto;
+            margin:10px auto;
         }
        
         
@@ -313,7 +313,7 @@ body, html{
                    weight: bold;
                }
                 color: $Dwhite;
-                margin: 10px 0;
+                margin: 20px 0 0;
             }
         }
         .insightWrapper{
@@ -511,6 +511,7 @@ body, html{
     left: 4px;
     bottom: 4px;
     background-color: white;
+    box-shadow: 0 6px 10px rgba(0,0,0,0.3);
     -webkit-transition: .4s;
     transition: .4s;
     text-align: center;
@@ -609,11 +610,27 @@ body, html{
                     weight: 900;
                 }
             }
-            .name{
+            .nameWrap{
                 margin-bottom: 15px;
+                display: flex;
+                align-items: center;
                 font: {
                     size: 24px;
                     weight: 300;
+                }
+                .name{
+                    margin:0 5px 0 0;
+                }
+                .icons{
+                    width: 24px;
+                    position: relative;
+                    margin: 0 5px;
+                    @include transform(translateY(3px));
+                    img{
+                        cursor: pointer;
+                        width: 100%;
+                        
+                    }
                 }
             }
             .bio{
@@ -714,9 +731,30 @@ body, html{
             object-fit: contain;
             display: block;
             width: 95%;
-            height: 500px;
+            height: 400px;
             max-width: 200px;
             margin: 0 10px 30px;
         }
+    }
+}
+.btn{
+    text-align: center;
+    width: 200px;
+    padding: 10px 24px;
+    margin:0 auto;
+    font: {
+        size: 15px;
+        weight: bold;
+    }
+    transition: .3s;
+    color: $Dwhite;
+    background: $green;
+    text-shadow: 0 0 4px rgba(0,0,0,0.3);
+    box-shadow: 0 6px 16px #9EC848;
+    border-radius: 32px;
+    margin-bottom: 90px;
+    &:hover{
+        @include transform(translateY(-6px));
+        box-shadow: 0 12px 32px #9EC848;
     }
 }

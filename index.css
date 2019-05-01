@@ -126,7 +126,7 @@ body, html {
     .mainBody .research p, .mainBody .research li {
       line-height: 1.6;
       max-width: 800px;
-      margin: 0 auto; }
+      margin: 10px auto; }
     .mainBody .research .secExpla {
       width: 95%;
       max-width: 750px;
@@ -215,7 +215,7 @@ body, html {
         font-size: 16px;
         font-weight: bold;
         color: #fffef4;
-        margin: 10px 0; }
+        margin: 20px 0 0; }
     .mainBody .research .insightWrapper {
       display: flex;
       flex-wrap: wrap;
@@ -372,6 +372,7 @@ body, html {
     left: 4px;
     bottom: 4px;
     background-color: white;
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.3);
     -webkit-transition: .4s;
     transition: .4s;
     text-align: center;
@@ -443,10 +444,24 @@ body, html {
         text-transform: uppercase;
         font-size: 12px;
         font-weight: 900; }
-      .profiles .profileWrapper .profileContent .name {
+      .profiles .profileWrapper .profileContent .nameWrap {
         margin-bottom: 15px;
+        display: flex;
+        align-items: center;
         font-size: 24px;
         font-weight: 300; }
+        .profiles .profileWrapper .profileContent .nameWrap .name {
+          margin: 0 5px 0 0; }
+        .profiles .profileWrapper .profileContent .nameWrap .icons {
+          width: 24px;
+          position: relative;
+          margin: 0 5px;
+          -webkit-transform: translateY(3px);
+          -ms-transform: translateY(3px);
+          transform: translateY(3px); }
+          .profiles .profileWrapper .profileContent .nameWrap .icons img {
+            cursor: pointer;
+            width: 100%; }
       .profiles .profileWrapper .profileContent .bio {
         font-size: 16px; }
     @media screen and (max-width: 768px) {
@@ -532,8 +547,28 @@ body, html {
       object-fit: contain;
       display: block;
       width: 95%;
-      height: 500px;
+      height: 400px;
       max-width: 200px;
       margin: 0 10px 30px; }
+
+.btn {
+  text-align: center;
+  width: 200px;
+  padding: 10px 24px;
+  margin: 0 auto;
+  font-size: 15px;
+  font-weight: bold;
+  transition: .3s;
+  color: #fffef4;
+  background: #9EC848;
+  text-shadow: 0 0 4px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 6px 16px #9EC848;
+  border-radius: 32px;
+  margin-bottom: 90px; }
+  .btn:hover {
+    -webkit-transform: translateY(-6px);
+    -ms-transform: translateY(-6px);
+    transform: translateY(-6px);
+    box-shadow: 0 12px 32px #9EC848; }
 
 /*# sourceMappingURL=index.css.map */
