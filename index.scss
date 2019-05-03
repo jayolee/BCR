@@ -953,6 +953,10 @@ body, html{
         display:flex;
         justify-content: center;
         align-items: center;
+        .arrowWrap{
+            width: 50px;
+            height: 70px;
+        }
         svg{
             display:none;
             path{
