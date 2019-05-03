@@ -66,7 +66,6 @@ body, html{
     line-height: 1.6;
     @media screen and (max-width: 412px) {
     font-size: 14px;
-    overflow-x: hidden;
     }
 }
 #header{
@@ -377,14 +376,16 @@ body, html{
                 }
                 .ox{
                     opacity: .5;
-                    width: 40px;
+                    width: 80px;
                     margin-right: 20px;
                     height: 80px;
                     @media screen and (max-width: 412px) {
                        position: absolute;
                        right: 5%;
+                       margin-right: 0;
                     }
                 svg{
+                    width: 80px;
                     fill:none;
                     stroke:$green;
                     stroke-width:6;

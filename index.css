@@ -21,8 +21,7 @@ body, html {
   line-height: 1.6; }
   @media screen and (max-width: 412px) {
     body, html {
-      font-size: 14px;
-      overflow-x: hidden; } }
+      font-size: 14px; } }
 
 #header {
   width: 95%;
@@ -288,14 +287,16 @@ body, html {
             flex-direction: column; } }
         .mainBody .research .method.new .ox {
           opacity: .5;
-          width: 40px;
+          width: 80px;
           margin-right: 20px;
           height: 80px; }
           @media screen and (max-width: 412px) {
             .mainBody .research .method.new .ox {
               position: absolute;
-              right: 5%; } }
+              right: 5%;
+              margin-right: 0; } }
           .mainBody .research .method.new .ox svg {
+            width: 80px;
             fill: none;
             stroke: #9EC848;
             stroke-width: 6;
