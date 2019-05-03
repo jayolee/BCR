@@ -21,13 +21,15 @@ body, html {
   line-height: 1.6; }
   @media screen and (max-width: 412px) {
     body, html {
-      font-size: 12px; } }
+      font-size: 14px;
+      overflow-x: hidden; } }
 
 #header {
   width: 95%;
   max-width: 1200px;
   margin: 30px auto;
   display: flex;
+  position: relative;
   justify-content: space-between; }
   #header #logo {
     width: 30%; }
@@ -49,52 +51,88 @@ body, html {
         transition: .3s;
         color: #9EC848; }
 
+#nav-icon {
+  display: none; }
+
 @media screen and (max-width: 650px) {
-  .menuwrap {
-    display: none; }
+  .menus {
+    width: 100%;
+    height: 0;
+    overflow: hidden;
+    background: rgba(255, 255, 255, 0.5);
+    transition: .5s ease-in-out; }
+
+  .menus {
+    margin: 0 auto;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 0; }
+
+  .menus .menuItem {
+    top: 0;
+    width: 95vw;
+    text-align: center;
+    height: 30px; }
+
+  .menus.open {
+    position: absolute;
+    height: 100px;
+    z-index: 999; }
 
   #nav-icon {
-    display: flex;
-    flex-direction: column;
+    z-index: 1000;
+    margin: 22px 10px 10px;
     display: block;
+    position: absolute;
     width: 38px;
     border-radius: 9px;
     opacity: 1;
+    right: 0;
     transition: .5s ease-in-out;
     cursor: pointer;
     z-index: 999; }
-    #nav-icon span {
-      display: flex;
-      flex-direction: column;
-      width: 100%;
-      height: 6px;
-      background: #9aaeb9;
-      border-radius: 3px;
-      opacity: 1;
-      right: 0;
-      transition: .25s ease-in-out; }
-      #nav-icon span:nth-child(1) {
-        top: 0; }
-      #nav-icon span:nth-child(2), #nav-icon span:nth-child(3) {
-        top: 12px; }
-      #nav-icon span:nth-child(4) {
-        top: 24px; }
-    #nav-icon.open span:nth-child(1) {
-      top: 18px;
-      right: 50%;
-      width: 0%; }
-    #nav-icon.open span:nth-child(2) {
-      -webkit-transform: rotate(45deg);
-      -ms-transform: rotate(45deg);
-      transform: rotate(45deg); }
-    #nav-icon.open span:nth-child(3) {
-      -webkit-transform: rotate(-45deg);
-      -ms-transform: rotate(-45deg);
-      transform: rotate(-45deg); }
-    #nav-icon.open span:nth-child(4) {
-      top: 18px;
-      right: 50%;
-      width: 0%; } }
+
+  #nav-icon span {
+    display: block;
+    position: absolute;
+    height: 6px;
+    width: 100%;
+    background: #9aaeb9;
+    border-radius: 3px;
+    opacity: .9;
+    right: 0;
+    transition: .25s ease-in-out; }
+
+  #nav-icon span:nth-child(1) {
+    top: 0px; }
+
+  #nav-icon span:nth-child(2),
+  #nav-icon span:nth-child(3) {
+    top: 12px; }
+
+  #nav-icon span:nth-child(4) {
+    top: 24px; }
+
+  #nav-icon.open span:nth-child(1) {
+    top: 18px;
+    width: 0%;
+    right: 50%; }
+
+  #nav-icon.open span:nth-child(2) {
+    -webkit-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    transform: rotate(45deg); }
+
+  #nav-icon.open span:nth-child(3) {
+    -webkit-transform: rotate(-45deg);
+    -moz-transform: rotate(-45deg);
+    transform: rotate(-45deg); }
+
+  #nav-icon.open span:nth-child(4) {
+    top: 18px;
+    width: 0%;
+    right: 50%; } }
 @keyframes draw {
   to {
     stroke-dashoffset: 0; } }
@@ -142,7 +180,7 @@ body, html {
     flex-wrap: wrap;
     width: 100%;
     padding: 120px 5%;
-    margin-bottom: 60px; }
+    margin-bottom: 30px; }
     @media screen and (max-width: 412px) {
       .mainBody .research {
         padding: 60px 5%;
@@ -193,6 +231,9 @@ body, html {
       margin: 30px auto 15px;
       transition: .5s;
       width: 100%; }
+      @media screen and (max-width: 850px) {
+        .mainBody .research .method {
+          flex-direction: column; } }
       .mainBody .research .method .iconWrapper {
         display: flex;
         align-items: flex-start;
@@ -209,12 +250,17 @@ body, html {
         @media screen and (max-width: 850px) {
           .mainBody .research .method .iconExpla {
             width: 330px;
-            max-width: 100%; } }
+            max-width: 100%;
+            align-items: flex-start;
+            justify-content: flex-start; } }
         .mainBody .research .method .iconExpla .title {
           line-height: 1.5;
           width: 100px;
           margin: 10px 20px;
           font-weight: bold; }
+          @media screen and (max-width: 850px) {
+            .mainBody .research .method .iconExpla .title {
+              width: 100%; } }
         .mainBody .research .method .iconExpla .ex {
           line-height: 1.7;
           width: 150px;
@@ -300,6 +346,9 @@ body, html {
         font-weight: bold;
         color: #fffef4;
         margin: 20px 0 0; }
+        @media screen and (max-width: 850px) {
+          .mainBody .research .methodN .iconExpla {
+            font-size: 14px; } }
     .mainBody .research .insightWrapper {
       display: flex;
       flex-wrap: wrap;
@@ -416,6 +465,10 @@ body, html {
       margin-bottom: 0;
       font-size: 32px;
       font-weight: 500; }
+      @media screen and (max-width: 850px) {
+        .mainBody .research.hypo {
+          font-size: 21px;
+          padding: 32px; } }
       @media screen and (max-width: 412px) {
         .mainBody .research.hypo {
           font-size: 18px;
@@ -567,6 +620,9 @@ body, html {
             width: 100%; }
       .profiles .profileWrapper .profileContent .bio {
         font-size: 16px; }
+        @media screen and (max-width: 412px) {
+          .profiles .profileWrapper .profileContent .bio {
+            font-size: 14px; } }
     @media screen and (max-width: 768px) {
       .profiles .profileWrapper {
         flex-direction: column; }
@@ -609,6 +665,8 @@ body, html {
         width: auto; } }
   .carouTop .title {
     position: absolute;
+    text-align: center;
+    width: 100%;
     top: 50%;
     left: 50%;
     color: #fff;
@@ -618,7 +676,7 @@ body, html {
     -webkit-transform: translateX(-50%) translateY(-50%);
     -ms-transform: translateX(-50%) translateY(-50%);
     transform: translateX(-50%) translateY(-50%);
-    font-size: 40px;
+    font-size: 32px;
     font-weight: 500; }
     @media screen and (max-width: 412px) {
       .carouTop .title {

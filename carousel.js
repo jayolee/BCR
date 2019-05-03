@@ -10,3 +10,16 @@ function topCarousel() {
         }, 400);
     }, 3000)
 };
+
+$(document).ready(function(){
+    $('#nav-icon').click(function(){
+        $(this).toggleClass('open');
+        if($(this).hasClass('open')){
+           $('.menus').addClass('open');
+           }
+        else{
+            $('.menus').removeClass('open');
+        };				   
+    });
+})
+

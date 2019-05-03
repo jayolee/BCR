@@ -65,7 +65,8 @@ body, html{
     color: $Dblack;
     line-height: 1.6;
     @media screen and (max-width: 412px) {
-    font-size: 12px;
+    font-size: 14px;
+    overflow-x: hidden;
     }
 }
 #header{
@@ -73,6 +74,7 @@ body, html{
     max-width: 1200px;
     margin:30px auto;
     display:flex;
+    position:relative;
     justify-content: space-between;
     #logo{
         width: 30%;
@@ -100,65 +102,94 @@ body, html{
             }
         }
     }
+   
+} #nav-icon{
+    display:none;
 }
 
 @media screen and (max-width: 650px) {
-    .menuwrap{
-        display:none;
-    }
-  #nav-icon {
-    display:flex;
-    flex-direction: column;
-    display: block;
-    @include sizes(38px);
-    border-radius: 9px;
-    opacity: 1;
+  .menus {
+    width: 100%;
+    height: 0;
+    overflow: hidden;
+    background: rgba(255,255,255, .5);
     transition: .5s ease-in-out;
-    cursor: pointer;
+  }
+  .menus {
+    margin: 0 auto;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 0;
+
+  }
+  .menus .menuItem{
+      top:0;
+    width: 95vw;
+    text-align: center;
+    height: 30px;
+
+  }
+  .menus.open {
+    position:absolute;
+    height: 100px;
     z-index: 999;
-    span {
-        display: flex;
-        flex-direction: column;
-        @include sizes(100%, 6px);
+  }
+    #nav-icon {
+        z-index: 1000;
+        margin: 22px 10px 10px;
+        display: block;
+        position: absolute;
+        width: 38px;
+        border-radius: 9px;
+        opacity: 1;
+        right: 0;
+        transition: .5s ease-in-out;
+        cursor: pointer;
+        z-index: 999;
+      }
+    #nav-icon span {
+        display: block;
+        position: absolute;
+        height: 6px;
+        width: 100%;
         background: #9aaeb9;
         border-radius: 3px;
-        opacity: 1;
-        @include positions(null,0);
+        opacity: .9;
+        right: 0;
         transition: .25s ease-in-out;
-      
-        &:nth-child(1) {
-          @include positions(0);
-          }
-          &:nth-child(2),
-          &:nth-child(3) {
-            @include positions( 12px);
-          }
-          &:nth-child(4) {
-            @include positions(24px);
-          }
-        }
-        &.open{
-             span{
-
-              &:nth-child(1) {
-                @include positions(18px, 50%);
-                @include sizes(0%);
-          }
-          &:nth-child(2) {
-            @include transform(rotate(45deg));
-          }
-          &:nth-child(3) {
-            @include transform(rotate(-45deg));
-
-          }
-        &:nth-child(4) {
-          @include positions(18px, 50%);
-          @include sizes(0%);
-        }
-        }
-    }
+      }
+      #nav-icon span:nth-child(1) {
+        top: 0px;
+      }
+      #nav-icon span:nth-child(2),
+      #nav-icon span:nth-child(3) {
+        top: 12px;
+      }
+      #nav-icon span:nth-child(4) {
+        top: 24px;
+      }
+      #nav-icon.open span:nth-child(1) {
+        top: 18px;
+        width: 0%;
+        right: 50%;
+      }
+      #nav-icon.open span:nth-child(2) {
+        -webkit-transform: rotate(45deg);
+        -moz-transform: rotate(45deg);
+        transform: rotate(45deg);
+      }
+      #nav-icon.open span:nth-child(3) {
+        -webkit-transform: rotate(-45deg);
+        -moz-transform: rotate(-45deg);
+        transform: rotate(-45deg);
+      }
+      #nav-icon.open span:nth-child(4) {
+        top: 18px;
+        width: 0%;
+        right: 50%;
+      }
   }
-}
                 
 @keyframes draw {
     to{
@@ -215,7 +246,7 @@ body, html{
         flex-wrap: wrap;
         width: 100%;
         padding: 120px 5%;
-        margin-bottom: 60px;
+        margin-bottom: 30px;
         @media screen and (max-width: 412px) {
             padding: 60px 5%;
             margin-bottom: 30px;
@@ -269,6 +300,7 @@ body, html{
         }
         .method{
             display:flex;
+            
             align-items: flex-start;
             align-content: flex-start;
             justify-content: center;
@@ -277,6 +309,9 @@ body, html{
             margin: 30px auto 15px;
             transition: .5s;
             width: 100%;
+            @media screen and (max-width: 850px) {
+                flex-direction: column
+            }
             .iconWrapper{
                 display:flex;
                 align-items: flex-start;
@@ -295,6 +330,8 @@ body, html{
                 @media screen and (max-width: 850px) {
                 width: 330px;
                 max-width: 100%;
+                align-items: flex-start;
+                justify-content: flex-start;
                 }
                 .title{
                     line-height: 1.5;
@@ -302,6 +339,9 @@ body, html{
                     margin: 10px 20px;
                     font: {
                         weight: bold;
+                    }
+                    @media screen and (max-width: 850px) {
+                        width: 100%
                     }
                 }
                 .ex{
@@ -411,7 +451,11 @@ body, html{
                }
                 color: $Dwhite;
                 margin: 20px 0 0;
+                @media screen and (max-width: 850px) {
+                    font-size: 14px
+                }
             }
+           
         }
         .insightWrapper{
             display: flex;
@@ -550,6 +594,10 @@ body, html{
             font: {
                 size: 32px;
                 weight: 500;
+            }
+            @media screen and (max-width: 850px) {
+                font-size: 21px;
+                padding: 32px;
             }
             @media screen and (max-width: 412px) {
                 font-size: 18px;
@@ -754,6 +802,9 @@ body, html{
                 font: {
                     size: 16px;
                 }
+                @media screen and (max-width: 412px) {
+                    font-size: 14px;
+                }
             }
         }
 
@@ -804,6 +855,8 @@ body, html{
     }
     .title{
         position: absolute;
+        text-align: center;
+        width: 100%;
         top: 50%;
         left: 50%;
         color: #fff;
@@ -812,7 +865,7 @@ body, html{
         letter-spacing: 5px;
         @include transform(translateX(-50%) translateY(-50%));
         font: {
-            size: 40px;
+            size: 32px;
             weight: 500;
         }
         @media screen and (max-width: 412px) {
