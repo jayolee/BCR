@@ -1,4 +1,11 @@
 @import url('https://fonts.googleapis.com/css?family=Lato:300,400,700, 900');
+@import url('https://fonts.googleapis.com/css?family=Catamaran:900');
+@mixin column-count($n){
+    -webkit-column-count: $n;
+    column-count: $n;
+    -webkit-column-gap: 30px;
+    column-gap: 30px;
+}
 @mixin transform($transform) {
     -webkit-transform: $transform;
     -ms-transform: $transform;
@@ -37,6 +44,7 @@ $green: #9EC848;
 $red: #A94b56;
 $dGreen: #1b4547;
 $Dwhite: rgb(255, 254, 244);
+$Dblack: rgba(0,0,0,0.9);
 
 div, a, img{
     box-sizing: border-box;
@@ -54,7 +62,8 @@ body, html{
     -webkit-font-smoothing: antialiased;
    -moz-osx-font-smoothing: grayscale;
     text-rendering: optimizeLegibility;
-    color: #111;
+    color: $Dblack;
+    line-height: 1.6;
 }
 #header{
     width: 95%;
@@ -154,15 +163,17 @@ body, html{
         margin: 0 auto;
         line-height: 1.6;
         .problemS{
-            text-align: center;
+            max-width: 750px;
+            margin:16px auto;
+            text-align: left;
             font: {
-                size: 21px;
+                size: 20px;
                 weight: bold;
             }
             color: $blue;
         }
       p{
-          max-width: 800px;
+          max-width: 750px;
           margin:16px auto;
           width: 95%;
           
@@ -189,7 +200,7 @@ body, html{
         p, li{
             line-height: 1.6;
             max-width: 800px;
-            margin:10px auto;
+            margin:16px auto;
         }
        
         
@@ -264,10 +275,12 @@ body, html{
                 }
             }
             &.new{
+                
                 .iconWrapper{
                     width: 80px;
                 }
                 .iconExpla{
+                    color: $Dblack;
                     .title{
                         width: 140px;
                         position: relative;
@@ -386,12 +399,12 @@ body, html{
                 .dot{
                     cursor: pointer;
                     width: 15px;
-                    height: 16px;
-                    border:2px solid #8f8f8f;
+                    height: 15px;
+                    border:2px solid #afafaf;
                     border-radius: 9px;
                     margin:10px;
                     &.active{
-                        background: #8f8f8f;
+                        background: #afafaf;
                     }
                 }
             }
@@ -451,8 +464,10 @@ body, html{
             justify-content: center;
             flex-wrap: wrap;
             img{
+                width: 30%;
                 max-width: 350px;
-                height: 386px;
+                height: auto;
+                align-self: center;
                 object-fit: contain;
                 border: 10px solid rgba(255,255,255,.3);
                 margin:30px 10px;
@@ -731,8 +746,8 @@ body, html{
             object-fit: contain;
             display: block;
             width: 95%;
-            height: 400px;
-            max-width: 200px;
+            height: 350px;
+            width: 200px;
             margin: 0 10px 30px;
         }
     }
@@ -750,11 +765,51 @@ body, html{
     color: $Dwhite;
     background: $green;
     text-shadow: 0 0 4px rgba(0,0,0,0.3);
-    box-shadow: 0 6px 16px #9EC848;
+    box-shadow: 0 6px 8px #9ec848b8;
     border-radius: 32px;
     margin-bottom: 90px;
     &:hover{
         @include transform(translateY(-6px));
-        box-shadow: 0 12px 32px #9EC848;
+        box-shadow: 0 12px 16px #9ec848b8;
+    }
+}
+.list{
+    font: {
+        size: 40px;
+        weight: bold;
+        style: italic;
+    }
+    width: 10px;
+    opacity: .4;
+    margin: 0  !important;
+    padding: 0 !important;
+}
+.space{
+    padding-left: 20px;
+}
+.dbColumn{
+    display: flex;
+   
+    p{
+        text-align: left;
+        @include column-count(2);
+        padding:0 16px;
+    }
+}
+.finalD{
+    width: 100vw;
+    max-width: 1920px;
+    overflow-x:scroll;
+    overflow-y:hidden;
+    img{
+        margin:0 auto;
+        transition: .3s;
+       width: 100%;
+        cursor: zoom-in;
+        &.zoom{
+            height: 1200px;
+            width: auto;
+            cursor:zoom-out;
+        }
     }
 }

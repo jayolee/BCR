@@ -1,5 +1,6 @@
 @charset "UTF-8";
 @import url("https://fonts.googleapis.com/css?family=Lato:300,400,700, 900");
+@import url("https://fonts.googleapis.com/css?family=Catamaran:900");
 div, a, img {
   box-sizing: border-box; }
 
@@ -16,7 +17,8 @@ body, html {
   -webkit-font-smoothing: antialiased;
      -moz-osx-font-smoothing: grayscale;
       text-rendering: optimizeLegibility;
-  color: #111; }
+  color: rgba(0, 0, 0, 0.9);
+  line-height: 1.6; }
 
 #header {
   width: 95%;
@@ -100,12 +102,14 @@ body, html {
     margin: 0 auto;
     line-height: 1.6; }
     .mainBody .main .problemS {
-      text-align: center;
-      font-size: 21px;
+      max-width: 750px;
+      margin: 16px auto;
+      text-align: left;
+      font-size: 20px;
       font-weight: bold;
       color: #243C5B; }
     .mainBody .main p {
-      max-width: 800px;
+      max-width: 750px;
       margin: 16px auto;
       width: 95%; }
   .mainBody .secTitle {
@@ -126,7 +130,7 @@ body, html {
     .mainBody .research p, .mainBody .research li {
       line-height: 1.6;
       max-width: 800px;
-      margin: 10px auto; }
+      margin: 16px auto; }
     .mainBody .research .secExpla {
       width: 95%;
       max-width: 750px;
@@ -182,24 +186,26 @@ body, html {
           margin: 0 20px; }
       .mainBody .research .method.new .iconWrapper {
         width: 80px; }
-      .mainBody .research .method.new .iconExpla .title {
-        width: 140px;
-        position: relative;
-        padding-right: 0; }
-        .mainBody .research .method.new .iconExpla .title .ox {
-          width: 50px;
-          opacity: .5;
-          position: absolute;
-          right: 0;
-          top: 30px; }
-          .mainBody .research .method.new .iconExpla .title .ox img {
-            width: 100%; }
-      .mainBody .research .method.new .iconExpla .ex {
-        width: 350px;
-        font-size: 16px; }
-        .mainBody .research .method.new .iconExpla .ex ul {
-          padding: 0;
-          margin-block-start: 0; }
+      .mainBody .research .method.new .iconExpla {
+        color: rgba(0, 0, 0, 0.9); }
+        .mainBody .research .method.new .iconExpla .title {
+          width: 140px;
+          position: relative;
+          padding-right: 0; }
+          .mainBody .research .method.new .iconExpla .title .ox {
+            width: 50px;
+            opacity: .5;
+            position: absolute;
+            right: 0;
+            top: 30px; }
+            .mainBody .research .method.new .iconExpla .title .ox img {
+              width: 100%; }
+        .mainBody .research .method.new .iconExpla .ex {
+          width: 350px;
+          font-size: 16px; }
+          .mainBody .research .method.new .iconExpla .ex ul {
+            padding: 0;
+            margin-block-start: 0; }
     .mainBody .research .methodN {
       display: flex;
       flex-direction: column;
@@ -275,12 +281,12 @@ body, html {
         .mainBody .research .carousel .dots .dot {
           cursor: pointer;
           width: 15px;
-          height: 16px;
-          border: 2px solid #8f8f8f;
+          height: 15px;
+          border: 2px solid #afafaf;
           border-radius: 9px;
           margin: 10px; }
           .mainBody .research .carousel .dots .dot.active {
-            background: #8f8f8f; }
+            background: #afafaf; }
     .mainBody .research .insightN {
       width: 95%;
       max-width: 750px;
@@ -328,8 +334,10 @@ body, html {
       justify-content: center;
       flex-wrap: wrap; }
       .mainBody .research .storyBoard img {
+        width: 30%;
         max-width: 350px;
-        height: 386px;
+        height: auto;
+        align-self: center;
         object-fit: contain;
         border: 10px solid rgba(255, 255, 255, 0.3);
         margin: 30px 10px; }
@@ -547,8 +555,8 @@ body, html {
       object-fit: contain;
       display: block;
       width: 95%;
-      height: 400px;
-      max-width: 200px;
+      height: 350px;
+      width: 200px;
       margin: 0 10px 30px; }
 
 .btn {
@@ -562,13 +570,50 @@ body, html {
   color: #fffef4;
   background: #9EC848;
   text-shadow: 0 0 4px rgba(0, 0, 0, 0.3);
-  box-shadow: 0 6px 16px #9EC848;
+  box-shadow: 0 6px 8px #9ec848b8;
   border-radius: 32px;
   margin-bottom: 90px; }
   .btn:hover {
     -webkit-transform: translateY(-6px);
     -ms-transform: translateY(-6px);
     transform: translateY(-6px);
-    box-shadow: 0 12px 32px #9EC848; }
+    box-shadow: 0 12px 16px #9ec848b8; }
+
+.list {
+  font-size: 40px;
+  font-weight: bold;
+  font-style: italic;
+  width: 10px;
+  opacity: .4;
+  margin: 0  !important;
+  padding: 0 !important; }
+
+.space {
+  padding-left: 20px; }
+
+.dbColumn {
+  display: flex; }
+  .dbColumn p {
+    text-align: left;
+    -webkit-column-count: 2;
+    column-count: 2;
+    -webkit-column-gap: 30px;
+    column-gap: 30px;
+    padding: 0 16px; }
+
+.finalD {
+  width: 100vw;
+  max-width: 1920px;
+  overflow-x: scroll;
+  overflow-y: hidden; }
+  .finalD img {
+    margin: 0 auto;
+    transition: .3s;
+    width: 100%;
+    cursor: zoom-in; }
+    .finalD img.zoom {
+      height: 1200px;
+      width: auto;
+      cursor: zoom-out; }
 
 /*# sourceMappingURL=index.css.map */
