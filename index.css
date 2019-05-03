@@ -232,7 +232,8 @@ body, html {
       width: 100%; }
       @media screen and (max-width: 850px) {
         .mainBody .research .method {
-          flex-direction: column; } }
+          flex-direction: column;
+          max-width: 350px; } }
       .mainBody .research .method .iconWrapper {
         display: flex;
         align-items: flex-start;
@@ -782,7 +783,7 @@ body, html {
         stroke-width: 4px;
         stroke: #243C5B;
         cursor: pointer; }
-      @media screen and (max-width: 835px) {
+      @media screen and (max-width: 910px) {
         .protoWrapper .screen svg.visible {
           display: block; } }
     .protoWrapper .screen .imgwrapper {
@@ -801,7 +802,7 @@ body, html {
         width: 200px;
         align-self: center;
         margin: 0 10px 30px; }
-        @media screen and (max-width: 835px) {
+        @media screen and (max-width: 910px) {
           .protoWrapper .screen .imgwrapper img {
             display: none;
             opacity: 0; }
@@ -811,7 +812,7 @@ body, html {
       @media screen and (max-width: 1058px) {
         .protoWrapper .screen .imgwrapper.teamAZ img {
           width: 150px; } }
-      @media screen and (max-width: 835px) {
+      @media screen and (max-width: 910px) {
         .protoWrapper .screen .imgwrapper.teamAZ img {
           width: 200px; } }
 
