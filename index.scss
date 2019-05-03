@@ -371,7 +371,10 @@ body, html{
        
             &.new{
                 align-items: flex-start;
-                @media screen and (max-width: 412px) {
+                @media screen and (max-width: 850px) {
+                    flex-direction: row;
+                }
+                @media screen and (max-width: 612px) {
                     flex-direction: column;
                 }
                 .ox{
@@ -379,7 +382,7 @@ body, html{
                     width: 80px;
                     margin-right: 20px;
                     height: 80px;
-                    @media screen and (max-width: 412px) {
+                    @media screen and (max-width: 612px) {
                        position: absolute;
                        right: 5%;
                        margin-right: 0;

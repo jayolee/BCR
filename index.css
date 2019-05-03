@@ -282,7 +282,10 @@ body, html {
               margin-bottom: 6px; }
       .mainBody .research .method.new {
         align-items: flex-start; }
-        @media screen and (max-width: 412px) {
+        @media screen and (max-width: 850px) {
+          .mainBody .research .method.new {
+            flex-direction: row; } }
+        @media screen and (max-width: 612px) {
           .mainBody .research .method.new {
             flex-direction: column; } }
         .mainBody .research .method.new .ox {
@@ -290,7 +293,7 @@ body, html {
           width: 80px;
           margin-right: 20px;
           height: 80px; }
-          @media screen and (max-width: 412px) {
+          @media screen and (max-width: 612px) {
             .mainBody .research .method.new .ox {
               position: absolute;
               right: 5%;
