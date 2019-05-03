@@ -367,6 +367,8 @@ body, html {
           width: 600px; } }
       .mainBody .research .insightWrapper .innerwrapper {
         width: 520px;
+        max-width: 100%;
+        flex-wrap: wrap;
         display: flex;
         justify-content: center; }
         @media screen and (max-width: 1180px) {
