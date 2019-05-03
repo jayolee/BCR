@@ -310,12 +310,12 @@ body, html {
               stroke: #A94b56; }
         .mainBody .research .method.new .iconWrapper {
           width: 80px; }
-          @media screen and (max-width: 412px) {
+          @media screen and (max-width: 612px) {
             .mainBody .research .method.new .iconWrapper {
               margin-bottom: 20px; } }
         .mainBody .research .method.new .iconExpla {
           color: rgba(0, 0, 0, 0.9); }
-          @media screen and (max-width: 412px) {
+          @media screen and (max-width: 612px) {
             .mainBody .research .method.new .iconExpla {
               justify-content: flex-start; } }
           .mainBody .research .method.new .iconExpla .title {
@@ -323,6 +323,9 @@ body, html {
             position: relative;
             padding-right: 0;
             color: #243C5B; }
+            @media screen and (max-width: 612px) {
+              .mainBody .research .method.new .iconExpla .title {
+                width: 100%; } }
           .mainBody .research .method.new .iconExpla .ex {
             width: 350px;
             font-size: 16px; }
@@ -354,12 +357,20 @@ body, html {
           .mainBody .research .methodN .iconExpla {
             font-size: 14px; } }
     .mainBody .research .insightWrapper {
+      width: 100%;
       display: flex;
       flex-wrap: wrap;
       justify-content: center; }
       @media screen and (max-width: 1040px) {
         .mainBody .research .insightWrapper {
           width: 600px; } }
+      .mainBody .research .insightWrapper .innerwrapper {
+        width: 520px;
+        display: flex;
+        justify-content: center; }
+        @media screen and (max-width: 1180px) {
+          .mainBody .research .insightWrapper .innerwrapper {
+            width: 100%; } }
       .mainBody .research .insightWrapper .insights {
         display: flex;
         position: relative;
@@ -398,7 +409,7 @@ body, html {
           opacity: 0; }
     .mainBody .research .carousel {
       width: 100%;
-      margin: 60px auto;
+      margin: 36px auto 20px;
       text-align: center;
       display: flex;
       flex-direction: column;
@@ -582,7 +593,7 @@ body, html {
       margin-bottom: 30px; } }
 
 .profiles {
-  margin-bottom: 300px; }
+  margin-bottom: 180px; }
   .profiles .profileWrapper {
     width: 95%;
     max-width: 900px;

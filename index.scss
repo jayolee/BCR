@@ -403,13 +403,13 @@ body, html{
                 }
                 .iconWrapper{
                     width: 80px;
-                    @media screen and (max-width: 412px) {
+                    @media screen and (max-width: 612px) {
                         margin-bottom: 20px;
                     }
                 }
                 .iconExpla{
                     color: $Dblack;
-                    @media screen and (max-width: 412px) {
+                    @media screen and (max-width: 612px) {
                        justify-content: flex-start;
                     }
                     .title{
@@ -417,6 +417,9 @@ body, html{
                         position: relative;
                         padding-right: 0;
                         color: $blue;
+                        @media screen and (max-width: 612px) {
+                            width: 100%;
+                        }
                     }
                     .ex{
                         width: 350px;
@@ -462,11 +465,20 @@ body, html{
            
         }
         .insightWrapper{
+            width: 100%;
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
             @media screen and (max-width: 1040px){
                 width: 600px;
+            }
+            .innerwrapper{
+                width: 520px;
+                display: flex;
+                justify-content: center;
+                @media screen and (max-width: 1180px){
+                    width:100%;
+                }
             }
             .insights{
                 display:flex;
@@ -516,7 +528,7 @@ body, html{
        
         .carousel{
             width: 100%;
-            margin: 60px auto;
+            margin: 36px auto 20px;
             text-align: center;
             display:flex;
             flex-direction: column;
@@ -748,7 +760,7 @@ body, html{
     }
 }
 .profiles{
-    margin-bottom: 300px;
+    margin-bottom: 180px;
     .profileWrapper{
         width: 95%;
         max-width: 900px;
