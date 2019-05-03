@@ -19,6 +19,9 @@ body, html {
       text-rendering: optimizeLegibility;
   color: rgba(0, 0, 0, 0.9);
   line-height: 1.6; }
+  @media screen and (max-width: 412px) {
+    body, html {
+      font-size: 12px; } }
 
 #header {
   width: 95%;
@@ -92,7 +95,12 @@ body, html {
       top: 18px;
       right: 50%;
       width: 0%; } }
+@keyframes draw {
+  to {
+    stroke-dashoffset: 0; } }
 .mainBody {
+  width: 100%;
+  overflow-x: hidden;
   /* Hide default HTML checkbox */
   /* The slider */
   /* Rounded sliders */ }
@@ -105,9 +113,13 @@ body, html {
       max-width: 750px;
       margin: 16px auto;
       text-align: left;
+      padding: 0 2.5%;
       font-size: 20px;
       font-weight: bold;
       color: #243C5B; }
+      @media screen and (max-width: 412px) {
+        .mainBody .main .problemS {
+          font-size: 16px; } }
     .mainBody .main p {
       max-width: 750px;
       margin: 16px auto;
@@ -120,6 +132,10 @@ body, html {
     letter-spacing: 1px;
     font-size: 28px;
     font-weight: bold; }
+    @media screen and (max-width: 412px) {
+      .mainBody .secTitle {
+        margin-bottom: 10px;
+        font-size: 22px; } }
   .mainBody .research {
     display: flex;
     justify-content: center;
@@ -127,6 +143,10 @@ body, html {
     width: 100%;
     padding: 120px 5%;
     margin-bottom: 60px; }
+    @media screen and (max-width: 412px) {
+      .mainBody .research {
+        padding: 60px 5%;
+        margin-bottom: 30px; } }
     .mainBody .research p, .mainBody .research li {
       line-height: 1.6;
       max-width: 800px;
@@ -137,14 +157,25 @@ body, html {
       text-align: center;
       margin: 0 auto 30px;
       font-size: 18px; }
+      @media screen and (max-width: 412px) {
+        .mainBody .research .secExpla {
+          font-size: 14px; } }
     .mainBody .research .centerExpla {
       text-align: left;
       width: 95%;
       max-width: 1000px;
-      display: flex; }
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center; }
       .mainBody .research .centerExpla div {
-        width: 30%;
+        width: calc(33% - 40px);
+        min-width: 290px;
         margin: 30px 20px; }
+        @media screen and (max-width: 1173px) {
+          .mainBody .research .centerExpla div {
+            width: 100%;
+            max-width: 750px;
+            margin: 30px 20px 10px; } }
     .mainBody .research .expla {
       text-align: left;
       width: 95%;
@@ -158,54 +189,101 @@ body, html {
       align-content: flex-start;
       justify-content: center;
       text-align: left;
-      width: 1000px;
-      margin: 40px 0; }
+      width: auto;
+      margin: 30px auto 15px;
+      transition: .5s;
+      width: 100%; }
       .mainBody .research .method .iconWrapper {
         display: flex;
         align-items: flex-start;
         width: 50px;
-        height: 80px;
-        margin: 0 20px; }
+        height: 50px;
+        margin: 10px 20px; }
         .mainBody .research .method .iconWrapper img {
           width: 100%; }
       .mainBody .research .method .iconExpla {
         color: #fffef4;
-        display: flex; }
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center; }
+        @media screen and (max-width: 850px) {
+          .mainBody .research .method .iconExpla {
+            width: 330px;
+            max-width: 100%; } }
         .mainBody .research .method .iconExpla .title {
           line-height: 1.5;
           width: 100px;
-          margin: 0 20px;
+          margin: 10px 20px;
           font-weight: bold; }
         .mainBody .research .method .iconExpla .ex {
           line-height: 1.7;
           width: 150px;
           font-size: 14px;
-          margin: 0 20px; }
+          margin: 10px 20px; }
+          @media screen and (max-width: 412px) {
+            .mainBody .research .method .iconExpla .ex {
+              font-size: 12px; } }
         .mainBody .research .method .iconExpla .researchEx {
-          width: 450px;
-          margin: 0 20px; }
-      .mainBody .research .method.new .iconWrapper {
-        width: 80px; }
-      .mainBody .research .method.new .iconExpla {
-        color: rgba(0, 0, 0, 0.9); }
-        .mainBody .research .method.new .iconExpla .title {
-          width: 140px;
-          position: relative;
-          padding-right: 0; }
-          .mainBody .research .method.new .iconExpla .title .ox {
-            width: 50px;
-            opacity: .5;
-            position: absolute;
-            right: 0;
-            top: 30px; }
-            .mainBody .research .method.new .iconExpla .title .ox img {
-              width: 100%; }
-        .mainBody .research .method.new .iconExpla .ex {
-          width: 350px;
-          font-size: 16px; }
-          .mainBody .research .method.new .iconExpla .ex ul {
+          width: calc(100% - 420px);
+          max-width: 450px;
+          min-width: 300px;
+          margin: 10px 20px;
+          line-height: 1.6; }
+          .mainBody .research .method .iconExpla .researchEx ul {
             padding: 0;
             margin-block-start: 0; }
+            .mainBody .research .method .iconExpla .researchEx ul li {
+              margin: 0;
+              margin-bottom: 6px; }
+      .mainBody .research .method.new {
+        align-items: flex-start; }
+        @media screen and (max-width: 412px) {
+          .mainBody .research .method.new {
+            flex-direction: column; } }
+        .mainBody .research .method.new .ox {
+          opacity: .5;
+          width: 40px;
+          margin-right: 20px;
+          height: 80px; }
+          @media screen and (max-width: 412px) {
+            .mainBody .research .method.new .ox {
+              position: absolute;
+              right: 5%; } }
+          .mainBody .research .method.new .ox svg {
+            fill: none;
+            stroke: #9EC848;
+            stroke-width: 6;
+            stroke-miterlimit: 10;
+            stroke-dasharray: 1000;
+            stroke-dashoffset: 1000; }
+            .mainBody .research .method.new .ox svg.xmark {
+              stroke: #A94b56; }
+        .mainBody .research .method.new .iconWrapper {
+          width: 80px; }
+          @media screen and (max-width: 412px) {
+            .mainBody .research .method.new .iconWrapper {
+              margin-bottom: 20px; } }
+        .mainBody .research .method.new .iconExpla {
+          color: rgba(0, 0, 0, 0.9); }
+          @media screen and (max-width: 412px) {
+            .mainBody .research .method.new .iconExpla {
+              justify-content: flex-start; } }
+          .mainBody .research .method.new .iconExpla .title {
+            width: 140px;
+            position: relative;
+            padding-right: 0;
+            color: #243C5B; }
+          .mainBody .research .method.new .iconExpla .ex {
+            width: 350px;
+            font-size: 16px; }
+            @media screen and (max-width: 412px) {
+              .mainBody .research .method.new .iconExpla .ex {
+                font-size: 12px; } }
+            .mainBody .research .method.new .iconExpla .ex ul {
+              padding: 0;
+              margin-block-start: 0; }
+              .mainBody .research .method.new .iconExpla .ex ul li {
+                margin: 0; }
     .mainBody .research .methodN {
       display: flex;
       flex-direction: column;
@@ -272,10 +350,16 @@ body, html {
       display: flex;
       flex-direction: column;
       align-items: center; }
+      @media screen and (max-width: 412px) {
+        .mainBody .research .carousel {
+          margin: 20px auto; } }
       .mainBody .research .carousel img {
         width: 100%;
         max-width: 750px;
         margin-bottom: 30px; }
+        @media screen and (max-width: 412px) {
+          .mainBody .research .carousel img {
+            margin-bottom: 10px; } }
       .mainBody .research .carousel .dots {
         display: flex; }
         .mainBody .research .carousel .dots .dot {
@@ -303,6 +387,9 @@ body, html {
       .mainBody .research .insightN .keyword {
         font-size: 24px;
         font-weight: bold; }
+        @media screen and (max-width: 412px) {
+          .mainBody .research .insightN .keyword {
+            font-size: 18px; } }
       .mainBody .research .insightN .keyword, .mainBody .research .insightN .expla {
         text-shadow: 0 0 4px rgba(0, 0, 0, 0.3);
         width: 90%;
@@ -326,8 +413,13 @@ body, html {
       padding: 50px 100px;
       color: #fffef4;
       background: rgba(0, 0, 0, 0.5);
+      margin-bottom: 0;
       font-size: 32px;
       font-weight: 500; }
+      @media screen and (max-width: 412px) {
+        .mainBody .research.hypo {
+          font-size: 18px;
+          padding: 50px; } }
     .mainBody .research .storyBoard {
       width: 100%;
       display: flex;
@@ -341,6 +433,9 @@ body, html {
         object-fit: contain;
         border: 10px solid rgba(255, 255, 255, 0.3);
         margin: 30px 10px; }
+        @media screen and (max-width: 835px) {
+          .mainBody .research .storyBoard img {
+            width: 350px; } }
     .mainBody .research .toggleWrapper {
       width: 100%;
       display: flex;
@@ -489,17 +584,29 @@ body, html {
   color: #243C5B; }
 
 .carouTop {
+  width: 100%;
   display: flex;
   position: relative;
-  height: 500px;
+  height: 400px;
   background: #000;
-  transition: .3s; }
+  transition: .3s;
+  overflow: hidden; }
   .carouTop img {
+    position: absolute;
     transition: .9s;
     animation-timing-function: ease-in-out;
     object-fit: cover;
     width: 100%;
-    opacity: 0.7; }
+    opacity: 0.7;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translateX(-50%) translateY(-50%);
+    -ms-transform: translateX(-50%) translateY(-50%);
+    transform: translateX(-50%) translateY(-50%); }
+    @media screen and (max-width: 550px) {
+      .carouTop img {
+        height: 100%;
+        width: auto; } }
   .carouTop .title {
     position: absolute;
     top: 50%;
@@ -513,6 +620,34 @@ body, html {
     transform: translateX(-50%) translateY(-50%);
     font-size: 40px;
     font-weight: 500; }
+    @media screen and (max-width: 412px) {
+      .carouTop .title {
+        font-size: 24px; } }
+
+.byProto {
+  padding: 240px 0;
+  background: url(images/retreat/1_light.jpg);
+  background-repeat: no-repeat;
+  background-size: 100%;
+  max-width: 1500px;
+  margin-left: auto;
+  margin-right: auto;
+  background-position: center; }
+  @media screen and (max-width: 412px) {
+    .byProto {
+      padding: 0; } }
+
+.teamviews {
+  width: 100%;
+  position: relative;
+  height: 820px;
+  overflow: hidden;
+  margin: 0 auto; }
+  @media screen and (max-width: 835px) {
+    .teamviews {
+      height: 850px; }
+      .teamviews.higher {
+        height: 990px; } }
 
 .protoOuterWrapper {
   width: 95%;
@@ -538,32 +673,97 @@ body, html {
   text-align: center;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
   padding: 60px 30px 90px; }
+  @media screen and (max-width: 412px) {
+    .protoWrapper {
+      padding: 30px 5% 60px; } }
   .protoWrapper .prototypes {
-    width: 800px;
-    max-width: 100%;
+    width: 100%;
     margin: 0 auto;
     line-height: 1.5; }
     .protoWrapper .prototypes .title {
+      margin: 0 auto;
       margin-bottom: 16px;
+      width: 800px;
+      max-width: 95%;
       font-size: 21px;
       font-weight: bold;
       font-height: auto; }
+      @media screen and (max-width: 412px) {
+        .protoWrapper .prototypes .title {
+          font-size: 16px; } }
+    .protoWrapper .prototypes p {
+      margin: 0 auto;
+      width: 800px;
+      max-width: 95%; }
   .protoWrapper .screen {
     display: flex;
+    justify-content: center;
+    align-items: center; }
+    .protoWrapper .screen svg {
+      display: none; }
+      .protoWrapper .screen svg path {
+        fill: none;
+        stroke-width: 4px;
+        stroke: #243C5B;
+        cursor: pointer; }
+      @media screen and (max-width: 835px) {
+        .protoWrapper .screen svg.visible {
+          display: block; } }
+    .protoWrapper .screen .imgwrapper {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap; }
+      @media screen and (max-width: 412px) {
+        .protoWrapper .screen .imgwrapper {
+          width: 220px; } }
+      .protoWrapper .screen .imgwrapper img {
+        transition: .3s;
+        border: 1px solid #243C5B;
+        object-fit: contain;
+        display: block;
+        width: 200px;
+        align-self: center;
+        margin: 0 10px 30px; }
+        @media screen and (max-width: 835px) {
+          .protoWrapper .screen .imgwrapper img {
+            display: none;
+            opacity: 0; }
+            .protoWrapper .screen .imgwrapper img.visible {
+              display: block;
+              opacity: 1; } }
+      @media screen and (max-width: 1058px) {
+        .protoWrapper .screen .imgwrapper.teamAZ img {
+          width: 150px; } }
+      @media screen and (max-width: 835px) {
+        .protoWrapper .screen .imgwrapper.teamAZ img {
+          width: 200px; } }
+
+.needWrap {
+  width: 100%;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  margin: 30px auto; }
+  @media screen and (max-width: 895px) {
+    .needWrap {
+      flex-direction: column; } }
+  .needWrap .half {
+    width: 50%;
+    display: flex;
+    align-items: flex-start;
+    margin: 30px auto;
     justify-content: center; }
-    .protoWrapper .screen img {
-      object-fit: contain;
-      display: block;
-      width: 95%;
-      height: 350px;
-      width: 200px;
-      margin: 0 10px 30px; }
+    @media screen and (max-width: 895px) {
+      .needWrap .half {
+        width: 100%; } }
 
 .btn {
   text-align: center;
   width: 200px;
   padding: 10px 24px;
   margin: 0 auto;
+  letter-spacing: .1px;
   font-size: 15px;
   font-weight: bold;
   transition: .3s;
@@ -587,9 +787,15 @@ body, html {
   opacity: .4;
   margin: 0  !important;
   padding: 0 !important; }
+  @media screen and (max-width: 412px) {
+    .list {
+      font-size: 30px; } }
 
 .space {
   padding-left: 20px; }
+  @media screen and (max-width: 412px) {
+    .space {
+      padding: 0; } }
 
 .dbColumn {
   display: flex; }
@@ -600,6 +806,12 @@ body, html {
     -webkit-column-gap: 30px;
     column-gap: 30px;
     padding: 0 16px; }
+    @media screen and (max-width: 835px) {
+      .dbColumn p {
+        -webkit-column-count: 1;
+        column-count: 1;
+        -webkit-column-gap: 30px;
+        column-gap: 30px; } }
 
 .finalD {
   width: 100vw;
@@ -612,6 +824,7 @@ body, html {
     width: 100%;
     cursor: zoom-in; }
     .finalD img.zoom {
+      transition: .3s;
       height: 1200px;
       width: auto;
       cursor: zoom-out; }

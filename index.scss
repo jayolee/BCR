@@ -64,6 +64,9 @@ body, html{
     text-rendering: optimizeLegibility;
     color: $Dblack;
     line-height: 1.6;
+    @media screen and (max-width: 412px) {
+    font-size: 12px;
+    }
 }
 #header{
     width: 95%;
@@ -156,7 +159,15 @@ body, html{
     }
   }
 }
+                
+@keyframes draw {
+    to{
+        stroke-dashoffset: 0;
+    }
+}
 .mainBody{
+    width: 100%;
+    overflow-x:hidden;
     .main{
         width: 100%;
         max-width: 1000px;
@@ -166,11 +177,15 @@ body, html{
             max-width: 750px;
             margin:16px auto;
             text-align: left;
+            padding: 0 2.5%;
             font: {
                 size: 20px;
                 weight: bold;
             }
             color: $blue;
+            @media screen and (max-width: 412px) {
+               font-size: 16px;
+            }
         }
       p{
           max-width: 750px;
@@ -189,6 +204,10 @@ body, html{
             size: 28px;
             weight: bold;
         }
+        @media screen and (max-width: 412px) {
+            margin-bottom: 10px;
+            font-size: 22px;
+        }
     }
     .research{
         display:flex;
@@ -197,6 +216,10 @@ body, html{
         width: 100%;
         padding: 120px 5%;
         margin-bottom: 60px;
+        @media screen and (max-width: 412px) {
+            padding: 60px 5%;
+            margin-bottom: 30px;
+        }
         p, li{
             line-height: 1.6;
             max-width: 800px;
@@ -212,15 +235,26 @@ body, html{
             font: {
                 size: 18px;
             }
+            @media screen and (max-width: 412px) {
+                font-size: 14px;
+            }
         }
         .centerExpla{
             text-align: left;
             width: 95%;
             max-width: 1000px;
             display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
             div{
-                width: 30%;
-                margin: 30px 20px
+                width: calc(33% - 40px);
+                min-width: 290px;
+                margin: 30px 20px;
+            @media screen and (max-width: 1173px) {
+                width: 100%;
+                max-width: 750px;
+                margin: 30px 20px 10px;
+            }
             }
         }
         .expla{
@@ -239,26 +273,33 @@ body, html{
             align-content: flex-start;
             justify-content: center;
             text-align: left;
-            width: 1000px;
-            margin: 40px 0;
+            width: auto;
+            margin: 30px auto 15px;
+            transition: .5s;
+            width: 100%;
             .iconWrapper{
                 display:flex;
                 align-items: flex-start;
                 width: 50px;
-                height: 80px;
-                margin:0 20px;
+                height: 50px;
+                margin: 10px 20px;
                 img{
                     width: 100%;
                 }
             }
-           
             .iconExpla{
                 color: rgb(255, 254, 244);
                 display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                @media screen and (max-width: 850px) {
+                width: 330px;
+                max-width: 100%;
+                }
                 .title{
                     line-height: 1.5;
                     width: 100px;
-                    margin:0 20px;
+                    margin: 10px 20px;
                     font: {
                         weight: bold;
                     }
@@ -267,41 +308,84 @@ body, html{
                     line-height: 1.7;
                     width: 150px;
                     font-size: 14px;
-                    margin: 0 20px;
+                    margin: 10px 20px;
+                    @media screen and (max-width: 412px) {
+                        font-size: 12px;
+                    }
                 }
                 .researchEx{
-                    width: 450px;
-                    margin: 0 20px;
+                    width: calc(100% - 420px);
+                    max-width: 450px;
+                    min-width: 300px;
+                    margin: 10px 20px;
+                    line-height: 1.6;
+                    ul{
+                        padding: 0;
+                        margin-block-start: 0;
+                        li{
+                            margin: 0;
+                            margin-bottom: 6px;
+                        }
+                    }
                 }
             }
+       
             &.new{
-                
+                align-items: flex-start;
+                @media screen and (max-width: 412px) {
+                    flex-direction: column;
+                }
+                .ox{
+                    opacity: .5;
+                    width: 40px;
+                    margin-right: 20px;
+                    height: 80px;
+                    @media screen and (max-width: 412px) {
+                       position: absolute;
+                       right: 5%;
+                    }
+                svg{
+                    fill:none;
+                    stroke:$green;
+                    stroke-width:6;
+                    stroke-miterlimit:10;
+                    stroke-dasharray: 1000;
+                    stroke-dashoffset: 1000;
+                    
+                    &.xmark{
+                        stroke: $red;
+                    }
+                }
+                }
                 .iconWrapper{
                     width: 80px;
+                    @media screen and (max-width: 412px) {
+                        margin-bottom: 20px;
+                    }
                 }
                 .iconExpla{
                     color: $Dblack;
+                    @media screen and (max-width: 412px) {
+                       justify-content: flex-start;
+                    }
                     .title{
                         width: 140px;
                         position: relative;
                         padding-right: 0;
-                        .ox{
-                            width: 50px;
-                            opacity: .5;
-                            position: absolute;
-                            right: 0;
-                            top: 30px;
-                            img{
-                                width: 100%;
-                            }
-                        }
+                        color: $blue;
                     }
                     .ex{
                         width: 350px;
                         font-size: 16px;
+                        @media screen and (max-width: 412px) {
+                            font-size: 12px;
+                        }
                         ul{
                             padding: 0;
                             margin-block-start: 0;
+                            li{
+                                margin: 0;
+                            }
                         }
                     }
                 }
@@ -389,10 +473,16 @@ body, html{
             display:flex;
             flex-direction: column;
             align-items: center;
+            @media screen and (max-width: 412px) {
+                margin:20px auto;
+            }
             img{
                 width: 100%;
                 max-width: 750px;
-               margin-bottom: 30px;;
+               margin-bottom: 30px;
+               @media screen and (max-width: 412px) {
+                margin-bottom: 10px;
+            }
             }
             .dots{
                 display: flex;
@@ -427,6 +517,9 @@ body, html{
                 size: 24px;
                 weight: bold;
                 }
+                @media screen and (max-width: 412px) {
+                   font-size: 18px;
+                }
             }
             .keyword, .expla{
                 text-shadow: 0 0 4px rgba(0,0,0,0.3);
@@ -452,10 +545,15 @@ body, html{
             padding: 50px 100px;
             color: $Dwhite;   
             background: rgba(0,0,0,0.5);
+            margin-bottom: 0;
             
             font: {
                 size: 32px;
                 weight: 500;
+            }
+            @media screen and (max-width: 412px) {
+                font-size: 18px;
+                padding: 50px;
             }
         }
         .storyBoard{
@@ -471,6 +569,9 @@ body, html{
                 object-fit: contain;
                 border: 10px solid rgba(255,255,255,.3);
                 margin:30px 10px;
+                @media screen and (max-width: 835px) {
+                    width: 350px;
+                }
             }
         }
         .toggleWrapper{
@@ -633,6 +734,7 @@ body, html{
                     size: 24px;
                     weight: 300;
                 }
+                
                 .name{
                     margin:0 5px 0 0;
                 }
@@ -677,17 +779,28 @@ body, html{
     color: $blue;
 }
 .carouTop{
+    width: 100%;
     display:flex;
     position:relative;
-    height: 500px;
+    height: 400px;
     background: #000;
     transition: .3s;
+    overflow: hidden;
     img{
+        position:absolute;
         transition: .9s;
         animation-timing-function: ease-in-out;
         object-fit: cover;
         width: 100%;
         opacity: 0.7;
+        top:50%;
+        left: 50%;
+        @include transform(translateX(-50%) translateY(-50%));
+
+@media screen and (max-width: 550px) {
+    height: 100%;
+    width: auto;
+}
     }
     .title{
         position: absolute;
@@ -702,8 +815,38 @@ body, html{
             size: 40px;
             weight: 500;
         }
+        @media screen and (max-width: 412px) {
+            font-size: 24px;
+        }
     }
 }
+.byProto{
+    padding: 240px 0;
+    background:url(images/retreat/1_light.jpg); background-repeat:no-repeat; 
+    background-size: 100%;  
+    max-width: 1500px;
+    margin-left: auto;
+    margin-right: auto;
+    background-position: center; 
+    @media screen and (max-width: 412px) {
+        padding:  0;
+    }
+}
+
+
+    .teamviews{
+        width: 100%; 
+        position:relative; 
+        height: 820px; 
+        overflow:hidden; 
+        margin:0 auto;
+        @media screen and (max-width: 835px) {
+            height: 850px;
+            &.higher{
+                height: 990px;
+            }
+        }
+    }
 .protoOuterWrapper{
     width: 95%;
     height: 500px;
@@ -725,31 +868,107 @@ body, html{
     text-align: center;
     box-shadow: 0 0 10px rgba(0,0,0,0.3);
     padding: 60px 30px 90px;
+    @media screen and (max-width: 412px) {
+       padding: 30px 5% 60px;
+    }
     .prototypes{
-        width: 800px;
-        max-width: 100%;
+        width: 100%;
         margin: 0 auto;
         line-height: 1.5;
         .title{
+            margin: 0 auto;
             margin-bottom: 16px;
+            width: 800px;
+            max-width: 95%;
             font: {
                 size: 21px;
                 weight: bold;
                 height: auto;
             }
+            @media screen and (max-width: 412px) {
+                font-size: 16px;
+            }
+        }
+        p{
+            margin: 0 auto;
+            width: 800px;
+            max-width: 95%;
         }
     }
     .screen{
+        display:flex;
+        justify-content: center;
+        align-items: center;
+        svg{
+            display:none;
+            path{
+            fill:none;
+            stroke-width: 4px;
+            stroke: $blue;
+            cursor: pointer;
+        }        
+        @media screen and (max-width: 835px) {
+          
+            &.visible{
+                display: block;
+            }
+        }
+    }
+        
+        .imgwrapper{
+        width: 100%;
         display: flex;
         justify-content: center;
+        flex-wrap: wrap;
+        @media screen and (max-width: 412px) {
+            width: 220px;
+        }
         img{
+            transition: .3s;
+            border: 1px solid $blue;
             object-fit: contain;
             display: block;
-            width: 95%;
-            height: 350px;
             width: 200px;
+            align-self: center;
             margin: 0 10px 30px;
+            @media screen and (max-width: 835px) {
+                display: none;
+                opacity:0;
+                &.visible{
+                    display: block;
+                    opacity: 1;
+                }
+            }
+           
         }
+        &.teamAZ img{
+            @media screen and (max-width: 1058px) {
+                width: 150px;
+            }
+            @media screen and (max-width: 835px) {
+                width: 200px;
+            }
+        }
+    }}
+}
+.needWrap{
+    width: 100%;
+    display:flex; 
+    align-items: flex-start;
+    justify-content: center;
+    margin: 30px auto; 
+    @media screen and (max-width: 895px) {
+        flex-direction: column;
+    }
+    .half{
+        width: 50%;
+        display:flex; 
+    align-items: flex-start;
+    margin: 30px auto;  
+    justify-content: center;
+    @media screen and (max-width: 895px) {
+        width: 100%;
+    }
     }
 }
 .btn{
@@ -757,6 +976,7 @@ body, html{
     width: 200px;
     padding: 10px 24px;
     margin:0 auto;
+    letter-spacing: .1px;
     font: {
         size: 15px;
         weight: bold;
@@ -783,9 +1003,15 @@ body, html{
     opacity: .4;
     margin: 0  !important;
     padding: 0 !important;
+    @media screen and (max-width: 412px) {
+    font-size: 30px;
+    }
 }
 .space{
     padding-left: 20px;
+    @media screen and (max-width: 412px) {
+        padding: 0;
+    }
 }
 .dbColumn{
     display: flex;
@@ -794,6 +1020,9 @@ body, html{
         text-align: left;
         @include column-count(2);
         padding:0 16px;
+        @media screen and (max-width: 835px) {
+            @include column-count(1);
+        }
     }
 }
 .finalD{
@@ -807,6 +1036,7 @@ body, html{
        width: 100%;
         cursor: zoom-in;
         &.zoom{
+            transition: .3s;
             height: 1200px;
             width: auto;
             cursor:zoom-out;

@@ -6,6 +6,7 @@
     <link rel="shortcut icon" href="images/icon.png">
     <link rel="stylesheet" href="index.css">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="shortcut icon" href="favicon.png">
     <meta name="theme-color" content="#000000">
 
     <title>Team Boulder Crest</title>
@@ -45,8 +46,10 @@
     </div>
     <div class="mainBody">
         <div class="carouTop" style="margin-bottom: 120px">
-            <img id="topCarousel" src="images/profiletop/1.jpg" />
-            <!-- <img id="secTop2" src="images/profiletop/2.jpg" /> -->
+                <img src="images/profiletop/1.jpg" class = "topimgs" />
+                <img src="images/profiletop/2.jpg" class = "topimgs" style="opacity: 0"/>
+                <img src="images/profiletop/3.jpg"  class = "topimgs" style="opacity: 0"/>
+                <img src="images/profiletop/4.jpg" class = "topimgs" style="opacity: 0"/>
             <div class="title">Our Team</div>
         </div>
         <div class="profiles">
@@ -93,9 +96,7 @@
                                 <a href="https://www.linkedin.com/in/kseelaus" target="_blank" rel="noopener noreferrer"><img
                                         src="images/linkedIn.png" /></a>
                             </div>
-                            <!-- <div class="icons">
-                                <a href="http://www.jayoung-lee.com/" target="_blank" rel="noopener noreferrer"><img src="images/web.svg" /></a>
-                            </div> -->
+                           
                     </div>
                     <div class="bio">
                         Kevin Seelaus is from Philadelphia, and has worked as a research specialist for psychology labs
@@ -192,24 +193,15 @@
         </div>
 
     </div>
+    <div style="font-size: 12px; text-align:center; margin:0 auto 10px;">
+            All rights reserved ⓒ 2019. Team Boulder Crest
+    </div>
     <script src="https://code.jquery.com/jquery-3.4.0.min.js" integrity="sha256-BJeo0qm959uMBGb65z40ejJYGSgR7REI4+CW1fNKwOg="
         crossorigin="anonymous"></script>
+        <script src ="carousel.js"></script>
     <script>
-        function topCarousel() {
-            let curImageTop = 2;
-            setInterval(function () {
-                $("#topCarousel").css("opacity", "0");
-                (curImageTop < 4) ? (curImageTop += 1) : (curImageTop = 1);
-                setTimeout(function () {
-                    $("#topCarousel").attr('src', "images/profiletop/" + curImageTop + ".jpg");
-                    setTimeout(function () {
-                        $("#topCarousel").css("opacity", "0.7");
-                    }, 100)
+        $(window).on('load', topCarousel);
 
-                }, 400);
-            }, 3000)
-        };
-        topCarousel();
     </script>
 </body>
 
