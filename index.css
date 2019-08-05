@@ -151,7 +151,7 @@ body, html {
     text-align: left; }
     .mainBody .main .problemS {
       max-width: 700px;
-      margin: 16px auto 32px;
+      margin: 16px auto 48px;
       font-size: 20px;
       font-weight: bold;
       color: #243C5B; }
@@ -159,8 +159,8 @@ body, html {
         .mainBody .main .problemS {
           font-size: 16px; } }
     .mainBody .main .expla {
-      max-width: 700px;
-      font-size: 13px;
+      max-width: 600px;
+      font-size: 14px;
       margin: 16px auto 60px;
       width: 95%;
       text-align: left; }
@@ -179,7 +179,7 @@ body, html {
   .mainBody .secTitle {
     width: 100%;
     text-align: center;
-    margin: 0 auto 30px;
+    margin: 0 auto 16px;
     text-transform: uppercase;
     letter-spacing: 1px;
     font-size: 28px;
@@ -205,10 +205,10 @@ body, html {
       margin: 16px auto; }
     .mainBody .research .secExpla {
       width: 95%;
-      max-width: 750px;
+      max-width: 560px;
       text-align: center;
       margin: 0 auto 30px;
-      font-size: 18px; }
+      font-size: 14px; }
       @media screen and (max-width: 412px) {
         .mainBody .research .secExpla {
           font-size: 14px; } }
@@ -226,7 +226,7 @@ body, html {
         @media screen and (max-width: 1173px) {
           .mainBody .research .centerExpla div {
             width: 100%;
-            max-width: 750px;
+            max-width: 520px;
             margin: 30px 20px 10px; } }
     .mainBody .research .expla {
       text-align: left;
@@ -428,7 +428,7 @@ body, html {
           opacity: 0; }
     .mainBody .research .carousel {
       width: 100%;
-      margin: 36px auto 20px;
+      margin: 0 auto;
       text-align: center;
       display: flex;
       flex-direction: column;
@@ -439,7 +439,7 @@ body, html {
       .mainBody .research .carousel img {
         width: 100%;
         max-width: 750px;
-        margin-bottom: 30px;
+        margin-bottom: 0;
         object-fit: contain; }
         @media screen and (max-width: 412px) {
           .mainBody .research .carousel img {
@@ -611,6 +611,9 @@ body, html {
       width: 100%;
       padding: 120px 0 160px;
       margin: 0 auto; }
+      @media screen and (max-width: 820px) {
+        .mainBody .design .solutionOverWrap {
+          padding: 30px 0; } }
     .mainBody .design .solution1_wrap {
       width: 100%;
       max-width: 1100px;
@@ -629,6 +632,14 @@ body, html {
             position: absolute;
             top: 0;
             left: 0; }
+      @media screen and (max-width: 820px) {
+        .mainBody .design .solution1_wrap {
+          flex-direction: column;
+          height: auto;
+          padding: 32px 16px; }
+          .mainBody .design .solution1_wrap .phoneWrap {
+            width: 100%;
+            max-width: 375px; } }
     .mainBody .design .solutionWrapper {
       width: calc(100% - 179px);
       max-width: 500px;
@@ -642,11 +653,14 @@ body, html {
         font-weight: bold;
         line-height: 2;
         margin-bottom: 8px; }
+      @media screen and (max-width: 820px) {
+        .mainBody .design .solutionWrapper {
+          width: 100%; } }
     .mainBody .design .roadmapOverWrapper {
       width: calc(100% + 32px);
       padding: 32px;
       background: #f7f6f1;
-      margin-top: 32px; }
+      margin-top: 60px; }
       .mainBody .design .roadmapOverWrapper .buttonWrap {
         display: flex;
         justify-content: center;
@@ -669,25 +683,43 @@ body, html {
       display: flex;
       margin: 32px auto;
       padding: 0; }
+      @media screen and (max-width: 650px) {
+        .mainBody .design .prcpBox {
+          flex-direction: column; } }
+      @media screen and (max-width: 650px) {
+        .mainBody .design .prcpBox .iconWrapper {
+          display: flex;
+          flex-direction: row; } }
       .mainBody .design .prcpBox .iconWrapper .innerWrap {
         cursor: pointer;
         display: flex;
         flex-direction: column;
         justify-content: space-between;
+        align-items: center;
         width: 120px;
         height: 110px;
         background: #fff; }
         .mainBody .design .prcpBox .iconWrapper .innerWrap.active {
           background: #f7f6f1; }
+        @media screen and (max-width: 650px) {
+          .mainBody .design .prcpBox .iconWrapper .innerWrap {
+            height: 80px; } }
       .mainBody .design .prcpBox .iconWrapper img {
         object-fit: contain;
         max-width: 60px;
-        width: 100%;
+        width: 95%;
         margin: 0 auto; }
+        @media screen and (max-width: 650px) {
+          .mainBody .design .prcpBox .iconWrapper img {
+            max-width: 50px; } }
       .mainBody .design .prcpBox #principle {
         width: calc(100% - 100px);
         display: flex;
         justify-content: center; }
+        @media screen and (max-width: 650px) {
+          .mainBody .design .prcpBox #principle {
+            padding: 0 16px;
+            width: 100%; } }
         .mainBody .design .prcpBox #principle img {
           width: 114px;
           margin-bottom: 32px; }
@@ -709,6 +741,14 @@ body, html {
       display: flex;
       align-items: flex-start;
       margin-top: 60px; }
+      @media screen and (max-width: 650px) {
+        .mainBody .design .halfWrapper {
+          flex-direction: column;
+          padding: 0 16px; }
+          .mainBody .design .halfWrapper .smallTitle {
+            margin: 16px 0; }
+          .mainBody .design .halfWrapper .expla {
+            margin: 0 auto 16px !important; } }
       .mainBody .design .halfWrapper.center {
         align-items: center; }
       .mainBody .design .halfWrapper .expla {
@@ -733,14 +773,14 @@ body, html {
       .mainBody .design .roadmap img {
         position: absolute;
         width: 243px; }
+      .mainBody .design .roadmap .hoverMsg {
+        padding: 32px 16px 16px; }
       .mainBody .design .roadmap .roadWrapper {
         position: relative;
         max-width: 2200px;
         margin: 0 auto; }
       .mainBody .design .roadmap .road {
         position: absolute; }
-        .mainBody .design .roadmap .road.blur {
-          opacity: 0; }
         .mainBody .design .roadmap .road.road1 {
           width: 498px;
           left: 0; }
@@ -758,6 +798,8 @@ body, html {
           width: 16.6%;
           left: 88.8%;
           width: 280px; }
+      .mainBody .design .roadmap .service {
+        margin-top: 60px; }
       .mainBody .design .roadmap .service1 {
         left: 11%;
         top: 53%; }
@@ -773,6 +815,8 @@ body, html {
       .mainBody .design .roadmap .service5 {
         left: 75%;
         top: 34%; }
+      .mainBody .design .roadmap .blur {
+        opacity: 0; }
       .mainBody .design .roadmap .detail {
         opacity: 1;
         position: absolute;
@@ -796,6 +840,63 @@ body, html {
           color: #243C5B; }
         .mainBody .design .roadmap .detail .expla {
           font-size: 13px; }
+    .mainBody .design .hoverMsg {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 16px 16px;
+      font-size: 18px;
+      font-weight: bold;
+      color: #243C5B;
+      text-align: center; }
+      .mainBody .design .hoverMsg.assignment {
+        margin-bottom: 24px; }
+    .mainBody .design .mobile {
+      display: none;
+      height: 1280px; }
+      .mainBody .design .mobile .mobileWrapper {
+        width: 375px;
+        margin: 0 auto;
+        position: relative;
+        height: 1000px; }
+      .mainBody .design .mobile .roadWrapper {
+        height: 1100px; }
+        .mainBody .design .mobile .roadWrapper .road {
+          width: 375px;
+          display: block;
+          margin: 0 auto; }
+      .mainBody .design .mobile .service1 {
+        left: 24%;
+        top: 4%; }
+      .mainBody .design .mobile .service2 {
+        left: 30%;
+        top: 25%; }
+      .mainBody .design .mobile .service3 {
+        left: 18%;
+        top: 50%; }
+      .mainBody .design .mobile .service4 {
+        left: 22%;
+        top: 70%; }
+      .mainBody .design .mobile .service5 {
+        left: 10%;
+        top: 90%; }
+    @media screen and (max-width: 1150px) {
+      .mainBody .design .desktop {
+        display: none; }
+      .mainBody .design .mobile {
+        display: block; }
+        .mainBody .design .mobile .road {
+          height: 1200px; }
+        .mainBody .design .mobile.roadmap .detail {
+          left: 50% !important;
+          transform: translateX(-50%);
+          padding: 16px;
+          max-width: 370px; }
+          .mainBody .design .mobile.roadmap .detail .title {
+            font-size: 20px; }
+          .mainBody .design .mobile.roadmap .detail .question {
+            font-size: 13px; }
+          .mainBody .design .mobile.roadmap .detail .expla {
+            font-size: 12px; } }
     .mainBody .design .solution_outWrap {
       display: flex; }
     .mainBody .design .solution_dash {
@@ -879,6 +980,10 @@ body, html {
       .mainBody .design .solution_dash .explaWrapper {
         display: flex;
         flex-direction: column; }
+        @media screen and (max-width: 650px) {
+          .mainBody .design .solution_dash .explaWrapper {
+            position: relative;
+            width: 1px; } }
       .mainBody .design .solution_dash .expla {
         width: 350px;
         margin-left: 16px;
@@ -890,6 +995,7 @@ body, html {
         opacity: 0; }
         .mainBody .design .solution_dash .expla#dash0 {
           opacity: 1;
+          display: block;
           margin-top: 16px;
           margin-bottom: -16px; }
         .mainBody .design .solution_dash .expla#dash2 {
@@ -897,7 +1003,8 @@ body, html {
         .mainBody .design .solution_dash .expla#dash3 {
           margin-top: 200px; }
         .mainBody .design .solution_dash .expla#assign0 {
-          opacity: 1; }
+          opacity: 1;
+          display: block; }
         .mainBody .design .solution_dash .expla#assign1 {
           margin-top: -110px; }
         .mainBody .design .solution_dash .expla#assign3 {
@@ -911,6 +1018,7 @@ body, html {
           margin-top: 280px; }
         .mainBody .design .solution_dash .expla#assignment_survey0 {
           opacity: 1;
+          display: block;
           margin-top: 240px; }
         .mainBody .design .solution_dash .expla#assignment_survey1 {
           margin-top: -100px; }
@@ -925,6 +1033,14 @@ body, html {
             margin-top: 8px;
             font-size: 16px;
             font-weight: bold; }
+        @media screen and (max-width: 650px) {
+          .mainBody .design .solution_dash .expla {
+            transform: translateX(-300px) translateY(-150px);
+            max-width: 300px;
+            position: absolute;
+            left: 0;
+            display: none;
+            margin-top: 0 !important; } }
     .mainBody .design .carousel {
       width: 100%;
       margin: 36px auto 20px;
@@ -1161,7 +1277,7 @@ body, html {
 .teamviews {
   width: 100%;
   position: relative;
-  height: 820px;
+  height: 910px;
   overflow: hidden;
   margin: 0 auto; }
   @media screen and (max-width: 835px) {
