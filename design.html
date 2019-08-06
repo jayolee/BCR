@@ -366,7 +366,7 @@
             <div class="innerWrapper" style="margin-top: 100px;">
                 <div class="halfWrapper" id="assignmentDes" style="align-items: center;">
                     <div class="expla">
-                        <div class="smallTitle">Current myPATHH–Assginment</div>
+                        <div class="smallTitle">Current myPATHH–Assignment</div>
                         <p>
                             The original version of the assignments section displays a view of all assignments released
                             in correspondence with which phase they are at but does not provide a clear indication of
@@ -404,9 +404,9 @@
                             Hover over the icons to read details.
                         </div>
                     <div class="buttonWrap">
-                        <div class="solution_btn active solu0">Overview</div>
-                        <div class="solution_btn solu1">Detail View</div>
-                        <div class="solution_btn solu2">Survey View</div>
+                        <div class="solution_btn active solu0">Navigation</div>
+                        <div class="solution_btn solu1">Weekly Assignment</div>
+                        <div class="solution_btn solu2">Survey Assignment</div>
                     </div>
                     <!--assignment solutions-->
 
@@ -794,7 +794,7 @@
 
             <div class="roadmap mobile">
                     <div class= "hoverMsg">
-                            Hover over the icons to read details.
+                            Click the icons to read details.
                         </div>
                 <div class = "mobileWrapper">
                     <div class="roadWrapper">
@@ -814,6 +814,7 @@
                     <img class="service service3" href="service3" src="images/design/roadmap/ServiceDesign_4.png" />
                     <img class="service service4" href="service4" src="images/design/roadmap/ServiceDesign_5.png" />
                     <img class="service service5" href="service5" src="images/design/roadmap/ServiceDesign_6.png" />
+                    <div class ="blkbg"></div>
                     <div class="detail">
                         <img src="images/design/roadmap/ServiceDesign_2.png" />
                         <div class="title">
@@ -961,6 +962,7 @@
             })
             //roadmap hover
             $(".roadmap .service").hover(function () {
+                if(window.innerWidth > 650){
                 roadmap($(this));
                 $(".roadmap .detail").css("display", "block")
                 $(".roadmap .detail").css("opacity", "1");
@@ -968,14 +970,48 @@
                 $('.service').css("opacity","0");
         $('.blur').css("opacity","1");
         $(this).css('opacity', '1');
+                }
             }, function () {
+                if(window.innerWidth > 650){
                 $(".roadmap .detail").css("opacity", "0")
                 $(".roadmap .detail").css("display", "none")
                 $('.road').css("opacity","1");
                 $('.service').css("opacity","1");
         $('.blur').css("opacity","0");
-
+}
             })
+
+             $(".roadmap .service").click(function () {
+                if(window.innerWidth <= 650){
+                roadmap($(this));
+                $(".roadmap .detail").css("display", "block")
+                $(".roadmap .blkbg").css("display", "block")
+                $(".roadmap .detail").css("opacity", "1");
+                $('.road').css("opacity","0");
+                $('.service').css("opacity","0");
+        $('.blur').css("opacity","1");
+        $(this).css('opacity', '1');
+                }
+             })
+
+             $(".roadmap .detail").click( function(){
+                if(window.innerWidth <= 650){
+                $(".roadmap .detail").css("opacity", "0")
+                $(".roadmap .detail").css("display", "none")
+                $('.road').css("opacity","1");
+                $('.service').css("opacity","1");
+        $('.blur').css("opacity","0");
+}                $(".roadmap .blkbg").css("display", "none")
+             })
+             $(".roadmap .blkbg").click( function(){
+                if(window.innerWidth <= 650){
+                $(".roadmap .detail").css("opacity", "0")
+                $(".roadmap .detail").css("display", "none")
+                $('.road').css("opacity","1");
+                $('.service').css("opacity","1");
+        $('.blur').css("opacity","0");
+}                $(".roadmap .blkbg").css("display", "none")
+             })
             //assignment solution btn
             $('.buttonWrap .solution_btn').click(function(){
                 $(".buttonWrap .solution_btn").removeClass("active");

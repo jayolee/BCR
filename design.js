@@ -82,10 +82,11 @@
         $(".roadmap .detail .title").html(content[number].title);
         $(".roadmap .detail .question").html(content[number].question);
         $(".roadmap .detail .expla").html(content[number].description);
+        if(window.innerWidth > 650){
         if(parseInt(thisObj.css("left"))+ 794 > window.innerWidth){
             if((parseInt(thisObj.css("left")) - 582) < 0){
                 $(".detail").css("left", (parseInt(thisObj.css("left")) - 261) + "px");
-                $(".detail").css("top", (parseInt(thisObj.css("top")) +125) + "px");
+                $(".detail").css("top", (parseInt(thisObj.css("top")) +170) + "px");
             } else{
             $(".detail").css("left", (parseInt(thisObj.css("left")) - 582) + "px");
             $(".detail").css("top", "32px");
@@ -94,6 +95,11 @@
         }else {$(".detail").css("left", (parseInt(thisObj.css("left"))+ 273) + "px");
         $(".detail").css("top", "32px");}
         
+    } else{
+        $(".detail").css("left", 0);
+                $(".detail").css("top",thisObj.offset().top - $(".roadmap.mobile").offset().top  );
+                console.log(thisObj.offset().top ,$(".roadmap.mobile").offset().top)
     }
+}
 //retreat visit
    

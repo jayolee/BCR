@@ -817,6 +817,14 @@ body, html {
         top: 34%; }
       .mainBody .design .roadmap .blur {
         opacity: 0; }
+      .mainBody .design .roadmap .blkbg {
+        background: rgba(0, 0, 0, 0.5);
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        display: none; }
       .mainBody .design .roadmap .detail {
         opacity: 1;
         position: absolute;
@@ -832,14 +840,19 @@ body, html {
         transition: .3s; }
         .mainBody .design .roadmap .detail img {
           position: relative;
-          width: 300px; }
+          width: 300px;
+          display: none; }
+          @media screen and (max-width: 1100px) {
+            .mainBody .design .roadmap .detail img {
+              display: block; } }
         .mainBody .design .roadmap .detail .title {
           font-family: "pragati narrow";
           font-size: 24px;
           margin: 16px 0;
           color: #243C5B; }
         .mainBody .design .roadmap .detail .expla {
-          font-size: 13px; }
+          font-size: 13px;
+          padding: 0; }
     .mainBody .design .hoverMsg {
       max-width: 1100px;
       margin: 0 auto;
