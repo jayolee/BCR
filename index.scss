@@ -842,11 +842,12 @@ body, html{
         .buttonWrap{
             display: flex;
             justify-content: center;
-            margin-bottom: 16px;
+            width: 100%;
+            margin: 0 auto 16px;
             .solution_btn{
                 font-weight: bold;
                 color: $blue;
-                border-radius: 20px;
+                border-radius: 60px;
                 padding: 4px 16px;
                 border:1px solid $blue;
                 margin: 0 4px;
