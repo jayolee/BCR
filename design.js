@@ -97,8 +97,7 @@
         
     } else{
         $(".detail").css("left", 0);
-                $(".detail").css("top",thisObj.offset().top - $(".roadmap.mobile").offset().top  );
-                console.log(thisObj.offset().top ,$(".roadmap.mobile").offset().top)
+                $(".detail").css("top",thisObj.offset().top - window.scrollY  );
     }
 }
 //retreat visit
