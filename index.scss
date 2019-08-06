@@ -878,9 +878,11 @@ body, html{
             .innerWrap{
                 cursor:pointer;
                 display: flex;
+                -webkit-display: flex;
                 flex-direction: column;
                 justify-content: space-between;
                 align-items: center;
+                -webkit-align-items: center;
                 width: 120px;
                 height: 110px;
                 background: #fff; 
